@@ -1,0 +1,2651 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quảng Trị Hội Nhập Kinh Tế Quốc Tế — Interactive Experience</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- =====================================================================
+       BỘ XỬ LÝ ĐỒ HỌA ĐỊA DANH QUẢNG TRỊ SỚM (ĐẶT TRONG HEAD ĐỂ CHỐNG LỖI ONERROR)
+       Đảm bảo thẻ <img> luôn có hình ảnh/đồ họa hợp lệ ngay khi trang đang tải
+       ===================================================================== -->
+  <script>
+    window.QTArtworkEngine = (function () {
+      const svgMap = {
+        'hien-luong': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="800" height="480">
+          <defs>
+            <linearGradient id="skyHL" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#071524"/>
+              <stop offset="58%" stop-color="#173753"/>
+              <stop offset="100%" stop-color="#d95d39"/>
+            </linearGradient>
+            <linearGradient id="waterHL" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#061826"/>
+              <stop offset="50%" stop-color="#0c2d42"/>
+              <stop offset="100%" stop-color="#061826"/>
+            </linearGradient>
+          </defs>
+          <rect width="800" height="480" fill="url(#skyHL)"/>
+          <circle cx="610" cy="145" r="68" fill="#f59e0b" opacity="0.32"/>
+          <circle cx="610" cy="145" r="42" fill="#fde68a" opacity="0.48"/>
+          <path d="M0,310 Q210,275 430,305 T800,295 L800,330 L0,330 Z" fill="#0b2234"/>
+          <rect y="315" width="800" height="165" fill="url(#waterHL)"/>
+          <!-- Kỳ đài Bắc sông Bến Hải -->
+          <rect x="376" y="155" width="48" height="160" rx="4" fill="#e05a36"/>
+          <rect x="356" y="285" width="88" height="30" rx="3" fill="#f59e0b"/>
+          <line x1="400" y1="68" x2="400" y2="155" stroke="#f8fafc" stroke-width="4"/>
+          <polygon points="400,68 468,90 400,112" fill="#ef4444"/>
+          <circle cx="422" cy="90" r="6" fill="#facc15"/>
+          <!-- Nhịp cầu Hiền Lương lịch sử 2 màu Xanh - Vàng -->
+          <path d="M55,315 L170,235 L285,315 L400,235" fill="none" stroke="#38bdf8" stroke-width="6" stroke-linejoin="round"/>
+          <path d="M400,235 L515,315 L630,235 L745,315" fill="none" stroke="#f59e0b" stroke-width="6" stroke-linejoin="round"/>
+          <line x1="35" y1="315" x2="400" y2="315" stroke="#38bdf8" stroke-width="8"/>
+          <line x1="400" y1="315" x2="765" y2="315" stroke="#f59e0b" stroke-width="8"/>
+          <path d="M120,375 Q400,355 680,375" fill="none" stroke="#38bdf8" stroke-width="2" opacity="0.45" stroke-dasharray="12 8"/>
+        </svg>`,
+
+        'lao-bao-gate': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="800" height="480">
+          <defs>
+            <linearGradient id="skyLB" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#091521"/>
+              <stop offset="60%" stop-color="#162b40"/>
+              <stop offset="100%" stop-color="#3b2316"/>
+            </linearGradient>
+          </defs>
+          <rect width="800" height="480" fill="url(#skyLB)"/>
+          <!-- Dãy Trường Sơn hùng vĩ -->
+          <path d="M0,335 L180,195 L340,265 L520,165 L690,250 L800,190 L800,480 L0,480 Z" fill="#112638"/>
+          <path d="M0,360 L230,245 L440,310 L650,220 L800,295 L800,480 L0,480 Z" fill="#173247"/>
+          <!-- Tuyến đường xuyên Á QL9 - EWEC -->
+          <polygon points="310,350 490,350 670,480 130,480" fill="#1e293b"/>
+          <line x1="400" y1="350" x2="400" y2="480" stroke="#f59e0b" stroke-width="5" stroke-dasharray="14 10"/>
+          <!-- Cổng Cửa khẩu quốc tế Lao Bảo -->
+          <rect x="245" y="235" width="38" height="120" fill="#cbd5e1"/>
+          <rect x="517" y="235" width="38" height="120" fill="#cbd5e1"/>
+          <rect x="210" y="198" width="380" height="40" rx="8" fill="#e05a36"/>
+          <rect x="265" y="162" width="270" height="36" rx="6" fill="#f59e0b"/>
+          <circle cx="400" cy="180" r="10" fill="#fff"/>
+        </svg>`,
+
+        'khe-sanh-agri': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="800" height="480">
+          <defs>
+            <linearGradient id="skyKS" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#071c18"/>
+              <stop offset="65%" stop-color="#133b2f"/>
+              <stop offset="100%" stop-color="#422006"/>
+            </linearGradient>
+          </defs>
+          <rect width="800" height="480" fill="url(#skyKS)"/>
+          <circle cx="640" cy="115" r="56" fill="#f59e0b" opacity="0.35"/>
+          <!-- Đồi rừng FSC & đất đỏ Bazan Hướng Hóa -->
+          <path d="M0,290 Q220,175 450,255 T800,210 L800,480 L0,480 Z" fill="#0f5132"/>
+          <path d="M0,345 Q260,260 520,330 T800,295 L800,480 L0,480 Z" fill="#146c43"/>
+          <path d="M0,395 Q310,335 800,390 L800,480 L0,480 Z" fill="#7c2d12"/>
+          <!-- Đường đồng mức đồi cà phê Khe Sanh -->
+          <path d="M60,415 Q320,355 740,405" fill="none" stroke="#10b981" stroke-width="5" stroke-dasharray="16 8"/>
+          <path d="M110,450 Q380,395 710,442" fill="none" stroke="#f59e0b" stroke-width="4" stroke-dasharray="12 8"/>
+        </svg>`,
+
+        'con-co-sea': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="800" height="480">
+          <defs>
+            <linearGradient id="skyCC" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#062138"/>
+              <stop offset="60%" stop-color="#0c4a6e"/>
+              <stop offset="100%" stop-color="#0284c7"/>
+            </linearGradient>
+          </defs>
+          <rect width="800" height="480" fill="url(#skyCC)"/>
+          <circle cx="190" cy="125" r="58" fill="#fbbf24" opacity="0.38"/>
+          <!-- Đảo Cồn Cỏ tiền tiêu -->
+          <path d="M275,285 Q405,175 545,285 Z" fill="#0d9488"/>
+          <path d="M315,285 Q410,205 505,285 Z" fill="#10b981"/>
+          <!-- Hải đăng Cồn Cỏ -->
+          <rect x="402" y="165" width="16" height="58" fill="#f8fafc"/>
+          <polygon points="410,150 426,165 394,165" fill="#ef4444"/>
+          <polygon points="418,160 620,120 620,195" fill="#fde68a" opacity="0.22"/>
+          <!-- Biển Cửa Tùng - Cửa Việt -->
+          <rect y="285" width="800" height="195" fill="#0369a1"/>
+          <path d="M70,340 Q230,315 390,340 T730,340" fill="none" stroke="#7dd3fc" stroke-width="4"/>
+          <path d="M120,395 Q290,370 460,395 T750,395" fill="none" stroke="#bae6fd" stroke-width="3" opacity="0.7"/>
+        </svg>`,
+
+        'wind-huong-hoa': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="800" height="480">
+          <defs>
+            <linearGradient id="skyWH" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#061823"/>
+              <stop offset="55%" stop-color="#0f3142"/>
+              <stop offset="100%" stop-color="#114b46"/>
+            </linearGradient>
+          </defs>
+          <rect width="800" height="480" fill="url(#skyWH)"/>
+          <circle cx="650" cy="120" r="65" fill="#f59e0b" opacity="0.28"/>
+          <path d="M0,340 Q210,235 450,315 T800,265 L800,480 L0,480 Z" fill="#0d3b38"/>
+          <path d="M0,390 Q310,305 590,370 T800,345 L800,480 L0,480 Z" fill="#082624"/>
+          <!-- Các trụ tuabin điện gió Hướng Hóa -->
+          <g stroke="#f1f5f9" stroke-width="5" stroke-linecap="round">
+            <line x1="210" y1="165" x2="210" y2="335"/>
+            <line x1="210" y1="165" x2="150" y2="115"/>
+            <line x1="210" y1="165" x2="278" y2="132"/>
+            <line x1="210" y1="165" x2="202" y2="238"/>
+
+            <line x1="445" y1="130" x2="445" y2="325"/>
+            <line x1="445" y1="130" x2="375" y2="75"/>
+            <line x1="445" y1="130" x2="522" y2="95"/>
+            <line x1="445" y1="130" x2="438" y2="212"/>
+
+            <line x1="635" y1="185" x2="635" y2="345"/>
+            <line x1="635" y1="185" x2="582" y2="142"/>
+            <line x1="635" y1="185" x2="695" y2="158"/>
+            <line x1="635" y1="185" x2="628" y2="250"/>
+          </g>
+          <circle cx="210" cy="165" r="7" fill="#14b8a6"/>
+          <circle cx="445" cy="130" r="8" fill="#f59e0b"/>
+          <circle cx="635" cy="185" r="7" fill="#14b8a6"/>
+        </svg>`,
+
+        'my-thuy-port': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="800" height="480">
+          <rect width="800" height="480" fill="#081728"/>
+          <rect y="305" width="800" height="175" fill="#0c2944"/>
+          <!-- Tàu container & Cảng nước sâu Mỹ Thủy -->
+          <polygon points="165,305 615,305 655,355 125,355" fill="#e05a36"/>
+          <rect x="225" y="245" width="75" height="60" rx="4" fill="#f59e0b"/>
+          <rect x="315" y="255" width="75" height="50" rx="4" fill="#14b8a6"/>
+          <rect x="405" y="238" width="75" height="67" rx="4" fill="#38bdf8"/>
+          <rect x="495" y="220" width="60" height="85" rx="4" fill="#e2e8f0"/>
+          <!-- Cần cẩu cảng biển -->
+          <line x1="595" y1="135" x2="595" y2="305" stroke="#f8fafc" stroke-width="7"/>
+          <line x1="480" y1="165" x2="680" y2="135" stroke="#f59e0b" stroke-width="6"/>
+          <path d="M90,405 Q400,380 710,405" fill="none" stroke="#38bdf8" stroke-width="3" stroke-dasharray="14 8"/>
+        </svg>`,
+
+        'dong-ha-human': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="800" height="480">
+          <rect width="800" height="480" fill="#091728"/>
+          <circle cx="400" cy="220" r="175" fill="none" stroke="#14b8a6" stroke-width="2" opacity="0.28" stroke-dasharray="8 8"/>
+          <!-- Đô thị Đông Hà & Mạng lưới nhân lực trẻ -->
+          <rect x="135" y="205" width="95" height="185" rx="6" fill="#1e3a5f"/>
+          <rect x="255" y="155" width="115" height="235" rx="6" fill="#0d9488"/>
+          <rect x="395" y="180" width="110" height="210" rx="6" fill="#d97706"/>
+          <rect x="530" y="220" width="95" height="170" rx="6" fill="#e05a36"/>
+          <line x1="70" y1="390" x2="730" y2="390" stroke="#38bdf8" stroke-width="5"/>
+          <path d="M180,125 Q400,65 610,135" fill="none" stroke="#f59e0b" stroke-width="3" stroke-dasharray="10 6"/>
+        </svg>`
+      };
+
+      function getDataUri(key) {
+        const raw = svgMap[key] || svgMap['hien-luong'];
+        return 'data:image/svg+xml;utf8,' + encodeURIComponent(raw);
+      }
+
+      function applyFallback(imgEl, key) {
+        if (!imgEl) return;
+        const fallbackUri = getDataUri(key || 'hien-luong');
+        if (imgEl.src !== fallbackUri) {
+          imgEl.src = fallbackUri;
+        }
+      }
+
+      return { getDataUri, applyFallback };
+    })();
+  </script>
+
+  <!-- =====================================================================
+       STYLE.CSS (Giữ nguyên thiết kế A, B, C + Nâng cấp Điểm B Morph + Màn hình chuyển tiếp)
+       ===================================================================== -->
+  <style>
+    :root {
+      --bg-deep: #07111a;
+      --bg-mid: #0d1e2d;
+      --bg-surface: rgba(16, 35, 52, 0.72);
+      --bg-surface-strong: rgba(13, 28, 43, 0.92);
+      --glass-border: rgba(255, 255, 255, 0.12);
+      --glass-highlight: rgba(255, 255, 255, 0.22);
+
+      --qt-terracotta: #e05a36;
+      --qt-amber: #f59e0b;
+      --qt-teal: #14b8a6;
+      --qt-emerald: #10b981;
+      --qt-crimson: #ef4444;
+      --qt-sky: #38bdf8;
+
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+
+      --font-sans: 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      --transition-morph: 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+      --transition-fast: 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      min-height: 100vh;
+      background-color: var(--bg-deep);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      line-height: 1.6;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    body.reduced-motion *,
+    body.reduced-motion *::before,
+    body.reduced-motion *::after {
+      animation: none !important;
+      transition-duration: 0.01s !important;
+    }
+
+    /* ---------------------------------------------------------------------
+       LỚP NỀN KHÔNG GIAN & ĐỒ HỌA SVG MORPH TRUNG TÂM
+       --------------------------------------------------------------------- */
+    #spatial-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at var(--light-x, 70%) var(--light-y, 25%), var(--aura-primary, rgba(20, 184, 166, 0.22)) 0%, transparent 55%),
+        radial-gradient(circle at var(--light2-x, 20%) var(--light2-y, 80%), var(--aura-secondary, rgba(224, 90, 54, 0.18)) 0%, transparent 60%),
+        linear-gradient(160deg, #060f17 0%, #0b1927 50%, #08131e 100%);
+      transition: background var(--transition-morph);
+    }
+
+    .ambient-grid {
+      position: absolute;
+      inset: -10%;
+      background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+      background-size: 64px 64px;
+      transform: perspective(900px) rotateX(var(--grid-tilt, 18deg)) scale(var(--grid-scale, 1));
+      transition: transform var(--transition-morph), opacity var(--transition-morph);
+      opacity: 0.65;
+    }
+
+    #morph-stage-container {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform var(--transition-morph), opacity var(--transition-morph);
+    }
+
+    #morph-stage-svg {
+      width: min(92vw, 1100px);
+      height: min(86vh, 760px);
+      overflow: visible;
+      filter: drop-shadow(0 0 32px rgba(20, 184, 166, 0.16));
+      transition: all var(--transition-morph);
+    }
+
+    .morph-path-primary {
+      fill: none;
+      stroke: var(--morph-stroke-1, #14b8a6);
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: d var(--transition-morph), stroke var(--transition-morph), opacity var(--transition-morph);
+      opacity: 0.42;
+    }
+
+    .morph-path-secondary {
+      fill: var(--morph-fill-2, rgba(245, 158, 11, 0.04));
+      stroke: var(--morph-stroke-2, #f59e0b);
+      stroke-width: 1.4;
+      stroke-dasharray: 8 6;
+      transition: d var(--transition-morph), stroke var(--transition-morph), fill var(--transition-morph), opacity var(--transition-morph);
+      opacity: 0.35;
+    }
+
+    .morph-node-ring {
+      fill: none;
+      stroke: var(--qt-amber);
+      stroke-width: 1.5;
+      transition: all var(--transition-morph);
+      opacity: 0.35;
+    }
+
+    /* ---------------------------------------------------------------------
+       THANH ĐIỀU HƯỚNG & CHỈ BÁO TIẾN TRÌNH (TOP HUD)
+       --------------------------------------------------------------------- */
+    .top-hud {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(7, 17, 26, 0.78);
+      border-bottom: 1px solid var(--glass-border);
+      transition: all var(--transition-fast);
+    }
+
+    .hud-inner {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .brand-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      cursor: pointer;
+    }
+
+    .brand-emblem {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--qt-terracotta), var(--qt-amber));
+      display: grid;
+      place-items: center;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(224, 90, 54, 0.35);
+    }
+
+    .brand-text-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-kicker {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--qt-amber);
+    }
+
+    .brand-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .nav-pills {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 0.3rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      overflow-x: auto;
+      max-width: 100%;
+    }
+
+    .nav-pill {
+      appearance: none;
+      border: none;
+      background: transparent;
+      color: var(--text-secondary);
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.45rem 0.95rem;
+      border-radius: 999px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all var(--transition-fast);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-pill:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-pill.active {
+      background: linear-gradient(135deg, var(--qt-teal), #0d9488);
+      color: #041314;
+      font-weight: 700;
+      box-shadow: 0 4px 14px rgba(20, 184, 166, 0.35);
+    }
+
+    .nav-pill.transition-pill.active {
+      background: linear-gradient(135deg, var(--qt-amber), var(--qt-terracotta));
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(245, 158, 11, 0.4);
+    }
+
+    .hud-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .control-chip {
+      appearance: none;
+      border: 1px solid var(--glass-border);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-secondary);
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      padding: 0.4rem 0.75rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .control-chip:hover,
+    .control-chip.active-mode {
+      border-color: var(--qt-amber);
+      color: var(--qt-amber);
+      background: rgba(245, 158, 11, 0.12);
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.07);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 25%;
+      background: linear-gradient(90deg, var(--qt-terracotta), var(--qt-amber), var(--qt-teal));
+      transition: width 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* ---------------------------------------------------------------------
+       KHUNG CHỨA CÁC SCENE TRÌNH BÀY
+       --------------------------------------------------------------------- */
+    main#experience-viewport {
+      position: relative;
+      z-index: 10;
+      padding-top: 76px;
+      min-height: 100vh;
+    }
+
+    .scene-section {
+      display: none;
+      min-height: calc(100vh - 76px);
+      width: 100%;
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 5rem;
+      opacity: 0;
+      transform: translateY(24px) scale(0.985);
+      transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .scene-section.active-scene {
+      display: block;
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .scene-footer-nav {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--glass-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .btn-primary, .btn-secondary, .btn-next-experience {
+      appearance: none;
+      border: none;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.85rem 1.6rem;
+      border-radius: 12px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      transition: all var(--transition-fast);
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--qt-teal), #0d9488);
+      color: #041314;
+      box-shadow: 0 8px 24px rgba(20, 184, 166, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(20, 184, 166, 0.45);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.07);
+      color: var(--text-primary);
+      border: 1px solid var(--glass-border);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.14);
+      border-color: var(--glass-highlight);
+    }
+
+    .btn-next-experience {
+      background: linear-gradient(135deg, var(--qt-amber), var(--qt-terracotta));
+      color: #fff;
+      box-shadow: 0 10px 30px rgba(224, 90, 54, 0.4);
+      font-size: 1.04rem;
+      padding: 1rem 2rem;
+    }
+
+    .btn-next-experience:hover {
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: 0 14px 36px rgba(245, 158, 11, 0.55);
+    }
+
+    /* ---------------------------------------------------------------------
+       COMPONENT HÌNH ẢNH QUẢNG TRỊ
+       --------------------------------------------------------------------- */
+    .qt-media-frame {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #0a1824;
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.42);
+    }
+
+    .qt-media-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.45s ease, transform 0.7s ease;
+    }
+
+    .qt-media-frame:hover img {
+      transform: scale(1.03);
+    }
+
+    .qt-media-caption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 5;
+      padding: 0.85rem 1.1rem;
+      background: linear-gradient(to top, rgba(6, 15, 23, 0.95) 0%, rgba(6, 15, 23, 0.72) 70%, transparent 100%);
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    .caption-text {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+    }
+
+    .caption-badge {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      background: rgba(20, 184, 166, 0.2);
+      border: 1px solid rgba(20, 184, 166, 0.4);
+      color: #5eead4;
+      white-space: nowrap;
+    }
+
+    /* ---------------------------------------------------------------------
+       PHẦN A — MỞ ĐẦU (GIỮ NGUYÊN BỐ CỤC HIỆN TẠI)
+       --------------------------------------------------------------------- */
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2.5rem;
+      align-items: center;
+      min-height: calc(100vh - 180px);
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(224, 90, 54, 0.14);
+      border: 1px solid rgba(224, 90, 54, 0.4);
+      color: #fca5a5;
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.8vw, 3.55rem);
+      line-height: 1.16;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 60%, var(--qt-amber) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-lead {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 640px;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-coords-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.9rem;
+      margin-bottom: 2rem;
+    }
+
+    .coord-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--glass-border);
+      padding: 0.95rem 1.1rem;
+      border-radius: 14px;
+      backdrop-filter: blur(12px);
+    }
+
+    .coord-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--qt-amber);
+      text-transform: uppercase;
+    }
+
+    .coord-value {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-top: 0.2rem;
+      color: var(--text-primary);
+    }
+
+    .hero-visual-stack {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+
+    .hero-main-showcase {
+      height: 360px;
+    }
+
+    .hero-mini-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .hero-mini-card {
+      height: 145px;
+    }
+
+    /* ---------------------------------------------------------------------
+       PHẦN B — THUẬN LỢI & CƠ HỘI (NÂNG CẤP ĐIỂM ĐÁNH SỐ 01..07 + MORPH)
+       --------------------------------------------------------------------- */
+    .section-header-bar {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .section-tag {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--qt-teal);
+      margin-bottom: 0.35rem;
+    }
+
+    .section-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(1.65rem, 2.8vw, 2.5rem);
+      line-height: 1.2;
+    }
+
+    .submode-switcher {
+      display: inline-flex;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--glass-border);
+      padding: 0.3rem;
+      border-radius: 12px;
+      gap: 0.35rem;
+    }
+
+    .submode-btn {
+      appearance: none;
+      border: none;
+      background: transparent;
+      color: var(--text-secondary);
+      padding: 0.55rem 1.1rem;
+      border-radius: 9px;
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 0.84rem;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .submode-btn.active {
+      background: var(--qt-teal);
+      color: #041314;
+    }
+
+    .atlas-explorer-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 2rem;
+      align-items: stretch;
+    }
+
+    .interactive-map-stage {
+      background: radial-gradient(circle at 50% 50%, rgba(20, 184, 166, 0.14), rgba(10, 22, 34, 0.92));
+      border: 1px solid var(--glass-border);
+      border-radius: 22px;
+      padding: 1.4rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 550px;
+    }
+
+    .map-top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    /* KHUNG CHỨA BẢN ĐỒ & CÁC ĐIỂM ĐÁNH SỐ TƯƠNG TÁC (01..07) */
+    .qt-map-viewport {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      margin: 0.6rem 0;
+      border-radius: 16px;
+      background: rgba(6, 16, 25, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      overflow: hidden;
+    }
+
+    .qt-svg-map {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    #map-active-locus-ring,
+    #map-morph-beam {
+      transition: all 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* Nút điểm đánh số nhỏ tinh tế (01..07) đặt trên bản đồ Quảng Trị */
+    .numbered-hotspot-pin {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255, 255, 255, 0.68);
+      background: rgba(10, 25, 38, 0.9);
+      color: var(--text-primary);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      z-index: 12;
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+                  background 0.35s ease,
+                  border-color 0.35s ease,
+                  box-shadow 0.35s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+    }
+
+    .numbered-hotspot-pin::before {
+      content: "";
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+      border: 1.5px solid var(--qt-teal);
+      opacity: 0.55;
+      animation: pinBreathing 2.6s infinite ease-in-out;
+      pointer-events: none;
+    }
+
+    @keyframes pinBreathing {
+      0%, 100% { transform: scale(0.92); opacity: 0.35; }
+      50% { transform: scale(1.22); opacity: 0.85; }
+    }
+
+    .numbered-hotspot-pin:hover {
+      transform: translate(-50%, -50%) scale(1.15);
+      border-color: var(--qt-amber);
+      color: #fff;
+      box-shadow: 0 0 18px rgba(245, 158, 11, 0.55);
+    }
+
+    .numbered-hotspot-pin.active-pin {
+      background: linear-gradient(135deg, var(--qt-amber), var(--qt-terracotta));
+      border-color: #ffffff;
+      color: #ffffff;
+      transform: translate(-50%, -50%) scale(1.22);
+      box-shadow: 0 0 24px rgba(245, 158, 11, 0.75), 0 0 8px rgba(255, 255, 255, 0.6);
+      z-index: 15;
+    }
+
+    .numbered-hotspot-pin.active-pin::before {
+      border-color: var(--qt-amber);
+      inset: -7px;
+      animation-duration: 1.8s;
+    }
+
+    .pin-mini-tooltip {
+      position: absolute;
+      top: calc(100% + 5px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(7, 17, 26, 0.92);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      padding: 0.14rem 0.45rem;
+      border-radius: 6px;
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 0.84;
+      transition: all 0.25s ease;
+    }
+
+    .numbered-hotspot-pin.active-pin .pin-mini-tooltip,
+    .numbered-hotspot-pin:hover .pin-mini-tooltip {
+      opacity: 1;
+      color: #fff;
+      border-color: var(--qt-amber);
+      background: rgba(13, 28, 43, 0.96);
+    }
+
+    .advantage-selector-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .adv-chip {
+      appearance: none;
+      border: 1px solid var(--glass-border);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-secondary);
+      padding: 0.42rem 0.78rem;
+      border-radius: 10px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.38rem;
+    }
+
+    .adv-chip .chip-num {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      padding: 0.1rem 0.35rem;
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--qt-amber);
+    }
+
+    .adv-chip:hover {
+      border-color: var(--qt-teal);
+      color: #fff;
+    }
+
+    .adv-chip.active {
+      background: linear-gradient(135deg, rgba(20, 184, 166, 0.26), rgba(245, 158, 11, 0.22));
+      border-color: var(--qt-amber);
+      color: #fff;
+    }
+
+    .adv-chip.active .chip-num {
+      background: var(--qt-amber);
+      color: #07111a;
+      font-weight: 700;
+    }
+
+    /* PANEL CHI TIẾT BÊN PHẢI & HIỆU ỨNG MORPH GIỮA CÁC TRẠNG THÁI ẢNH/NỘI DUNG */
+    .atlas-detail-panel {
+      background: var(--bg-surface-strong);
+      border: 1px solid var(--glass-border);
+      border-radius: 22px;
+      padding: 1.65rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.15rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Sử dụng biến CSS --morph-clip thay cho inline clip-path để hiệu ứng luôn chạy ở mọi lần bấm */
+    .detail-media-slot {
+      height: 235px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+      clip-path: var(--morph-clip, inset(0% 0% 0% 0% round 16px));
+      transition: clip-path 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+                  border-color 0.45s ease;
+    }
+
+    .detail-media-slot.is-morphing-media {
+      clip-path: inset(4% 3% 4% 3% round 30px);
+      transform: scale(0.982);
+      border-color: var(--qt-amber);
+    }
+
+    .morph-media-layer {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      transition: opacity 0.52s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.62s cubic-bezier(0.22, 1, 0.36, 1),
+                  filter 0.52s ease;
+      will-change: opacity, transform, filter;
+    }
+
+    .morph-media-layer img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .morph-light-sheen {
+      position: absolute;
+      inset: 0;
+      z-index: 4;
+      pointer-events: none;
+      background: linear-gradient(115deg,
+        transparent 15%,
+        rgba(20, 184, 166, 0.28) 45%,
+        rgba(245, 158, 11, 0.38) 55%,
+        transparent 85%);
+      transform: translateX(-120%);
+      opacity: 0;
+    }
+
+    .detail-media-slot.is-morphing-media .morph-light-sheen {
+      animation: morphSheenSweep 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    @keyframes morphSheenSweep {
+      0% { transform: translateX(-110%); opacity: 0.95; }
+      100% { transform: translateX(115%); opacity: 0; }
+    }
+
+    .morph-content-block {
+      transition: opacity 0.34s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform;
+    }
+
+    .morph-content-block.is-morphing-text {
+      opacity: 0.16;
+      transform: translateY(8px) scale(0.992);
+    }
+
+    .detail-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    .detail-pillar-tag {
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      color: var(--qt-amber);
+      text-transform: uppercase;
+    }
+
+    .detail-number-badge {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--qt-amber), var(--qt-terracotta));
+      color: #fff;
+    }
+
+    .detail-title {
+      font-family: var(--font-serif);
+      font-size: 1.42rem;
+      margin: 0.25rem 0 0.45rem;
+      color: #fff;
+    }
+
+    .detail-short-summary {
+      font-size: 0.89rem;
+      color: #e2e8f0;
+      background: rgba(20, 184, 166, 0.09);
+      border-left: 3px solid var(--qt-teal);
+      padding: 0.62rem 0.9rem;
+      border-radius: 0 10px 10px 0;
+      margin-bottom: 0.75rem;
+    }
+
+    .detail-points {
+      list-style: none;
+      display: grid;
+      gap: 0.55rem;
+    }
+
+    .detail-points li {
+      position: relative;
+      padding-left: 1.35rem;
+      font-size: 0.89rem;
+      color: var(--text-secondary);
+    }
+
+    .detail-points li::before {
+      content: "◆";
+      position: absolute;
+      left: 0;
+      color: var(--qt-teal);
+      font-size: 0.75rem;
+      top: 0.15rem;
+    }
+
+    /* Bố cục B2: Sơ đồ Luồng Giao Thương & Chuỗi Giá Trị Hội Nhập */
+    .corridor-flow-stage {
+      margin-top: 2.5rem;
+      background: linear-gradient(145deg, rgba(13, 30, 45, 0.88), rgba(9, 19, 28, 0.94));
+      border: 1px solid var(--glass-border);
+      border-radius: 22px;
+      padding: 2rem;
+    }
+
+    .ewec-pipeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.1rem;
+      position: relative;
+      margin: 1.75rem 0;
+    }
+
+    .flow-node {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 1.25rem;
+      position: relative;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .flow-node:hover,
+    .flow-node.active-flow {
+      background: rgba(20, 184, 166, 0.12);
+      border-color: var(--qt-teal);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+    }
+
+    .flow-step-num {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--qt-amber);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+
+    .flow-node h4 {
+      font-size: 1.02rem;
+      margin-bottom: 0.45rem;
+      color: #fff;
+    }
+
+    .flow-node p {
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+    }
+
+    .flow-spotlight-box {
+      background: rgba(245, 158, 11, 0.08);
+      border-left: 4px solid var(--qt-amber);
+      border-radius: 0 14px 14px 0;
+      padding: 1.15rem 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    /* ---------------------------------------------------------------------
+       PHẦN C — THÁCH THỨC (GIỮ NGUYÊN BỐ CỤC ĐANG HOẠT ĐỘNG TỐT)
+       --------------------------------------------------------------------- */
+    .challenge-diagnostic-layout {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .radar-console {
+      background: linear-gradient(165deg, rgba(28, 17, 24, 0.9), rgba(13, 23, 34, 0.95));
+      border: 1px solid rgba(239, 68, 68, 0.28);
+      border-radius: 22px;
+      padding: 1.6rem;
+      position: sticky;
+      top: 96px;
+    }
+
+    .radar-svg-wrap {
+      width: 100%;
+      height: 290px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .tension-meter-box {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .meter-bar-bg {
+      height: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 999px;
+      overflow: hidden;
+      margin: 0.45rem 0;
+    }
+
+    .meter-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--qt-amber), var(--qt-crimson));
+      border-radius: 999px;
+      transition: width 0.5s ease;
+    }
+
+    .challenge-accordion-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .challenge-strip {
+      background: var(--bg-surface);
+      border: 1px solid var(--glass-border);
+      border-left: 4px solid var(--qt-terracotta);
+      border-radius: 16px;
+      padding: 1.2rem 1.4rem;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .challenge-strip:hover,
+    .challenge-strip.active-challenge {
+      background: rgba(224, 90, 54, 0.12);
+      border-color: var(--qt-terracotta);
+      transform: translateX(4px);
+    }
+
+    .challenge-strip-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .challenge-title-group {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .challenge-idx {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      padding: 0.25rem 0.55rem;
+      border-radius: 6px;
+      background: rgba(239, 68, 68, 0.18);
+      color: #fca5a5;
+    }
+
+    .challenge-strip-body {
+      margin-top: 0.95rem;
+      padding-top: 0.95rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: none;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .challenge-strip.active-challenge .challenge-strip-body {
+      display: grid;
+    }
+
+    .contrast-col {
+      padding: 0.85rem;
+      border-radius: 12px;
+      font-size: 0.86rem;
+    }
+
+    .contrast-col.risk {
+      background: rgba(239, 68, 68, 0.09);
+      border: 1px solid rgba(239, 68, 68, 0.22);
+    }
+
+    .contrast-col.response {
+      background: rgba(20, 184, 166, 0.09);
+      border: 1px solid rgba(20, 184, 166, 0.22);
+    }
+
+    /* ---------------------------------------------------------------------
+       MÀN HÌNH CHUYỂN TIẾP (TIẾP TỤC TRẢI NGHIỆM — MỞ FILE GAME RIÊNG)
+       --------------------------------------------------------------------- */
+    .transition-portal-wrap {
+      min-height: calc(100vh - 200px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem 0;
+    }
+
+    .transition-portal-card {
+      width: 100%;
+      max-width: 840px;
+      background: linear-gradient(155deg, rgba(16, 35, 52, 0.88) 0%, rgba(10, 22, 34, 0.96) 100%);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      border-radius: 28px;
+      padding: 3rem 2.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.55);
+    }
+
+    .portal-morph-emblem {
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 1.5rem;
+      position: relative;
+      display: grid;
+      place-items: center;
+    }
+
+    .portal-morph-svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    .portal-ring-outer {
+      fill: none;
+      stroke: var(--qt-amber);
+      stroke-width: 2;
+      stroke-dasharray: 8 6;
+      transform-origin: center;
+      animation: slowSpinPortal 18s linear infinite;
+    }
+
+    .portal-ring-inner {
+      fill: rgba(20, 184, 166, 0.14);
+      stroke: var(--qt-teal);
+      stroke-width: 2;
+      transition: transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+      transform-origin: center;
+    }
+
+    .transition-portal-card:hover .portal-ring-inner {
+      transform: scale(1.08) rotate(12deg);
+    }
+
+    @keyframes slowSpinPortal {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .transition-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.4vw, 2.85rem);
+      color: #fff;
+      margin-bottom: 0.9rem;
+    }
+
+    .transition-lead {
+      font-size: 1.04rem;
+      color: var(--text-secondary);
+      max-width: 620px;
+      margin: 0 auto 1.65rem;
+    }
+
+    .path-config-bar {
+      max-width: 580px;
+      margin: 0 auto 1.6rem;
+      background: rgba(7, 17, 26, 0.75);
+      border: 1px solid var(--glass-border);
+      border-radius: 14px;
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      text-align: left;
+    }
+
+    .path-config-bar code {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: #5eead4;
+      background: rgba(20, 184, 166, 0.12);
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+    }
+
+    .transition-status-notice {
+      margin-top: 1.5rem;
+      padding: 1.15rem 1.4rem;
+      border-radius: 14px;
+      background: rgba(20, 184, 166, 0.11);
+      border: 1px solid rgba(20, 184, 166, 0.4);
+      color: #e2e8f0;
+      font-size: 0.86rem;
+      text-align: left;
+      display: none;
+      line-height: 1.65;
+    }
+
+    .transition-status-notice.show {
+      display: block;
+    }
+
+    .transition-status-notice code {
+      font-family: var(--font-mono);
+      background: rgba(0, 0, 0, 0.35);
+      padding: 0.15rem 0.4rem;
+      border-radius: 5px;
+      color: #fde68a;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-layout,
+      .atlas-explorer-grid,
+      .challenge-diagnostic-layout {
+        grid-template-columns: 1fr;
+      }
+      .ewec-pipeline {
+        grid-template-columns: 1fr 1fr;
+      }
+      .radar-console {
+        position: static;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .ewec-pipeline,
+      .challenge-strip-body,
+      .hero-coords-strip {
+        grid-template-columns: 1fr;
+      }
+      .transition-portal-card {
+        padding: 2rem 1.35rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =====================================================================
+       LỚP NỀN KHÔNG GIAN & ĐỒ HỌA SVG MORPH TRUNG TÂM
+       ===================================================================== -->
+  <div id="spatial-backdrop">
+    <div class="ambient-grid"></div>
+  </div>
+
+  <div id="morph-stage-container" aria-hidden="true">
+    <svg id="morph-stage-svg" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid meet">
+      <defs>
+        <linearGradient id="qtMorphGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#e05a36" />
+          <stop offset="50%" stop-color="#f59e0b" />
+          <stop offset="100%" stop-color="#14b8a6" />
+        </linearGradient>
+      </defs>
+      <path id="morph-primary" class="morph-path-primary" stroke="url(#qtMorphGrad)"
+            d="M 140,350 C 260,150 740,150 860,350 C 740,550 260,550 140,350 Z" />
+      <path id="morph-secondary" class="morph-path-secondary"
+            d="M 80,350 L 920,350 M 500,70 L 500,630" />
+      <circle id="morph-orbit-1" class="morph-node-ring" cx="500" cy="350" r="190" />
+      <circle id="morph-orbit-2" class="morph-node-ring" cx="500" cy="350" r="290" stroke-dasharray="4 10" />
+    </svg>
+  </div>
+
+  <!-- =====================================================================
+       THANH ĐIỀU HƯỚNG & CHỈ BÁO TIẾN TRÌNH (A, B, C & CHUYỂN TIẾP)
+       ===================================================================== -->
+  <header class="top-hud">
+    <div class="hud-inner">
+      <div class="brand-badge" onclick="window.QTApp.goToScene('scene-intro')" title="Quay về màn hình mở đầu">
+        <div class="brand-emblem">QT</div>
+        <div class="brand-text-group">
+          <span class="brand-kicker">17° Vĩ Tuyến • Hành Lang Đông – Tây</span>
+          <span class="brand-title">Quảng Trị: Hội Nhập Kinh Tế Quốc Tế</span>
+        </div>
+      </div>
+
+      <nav class="nav-pills" aria-label="Điều hướng các phần trình bày">
+        <button type="button" class="nav-pill active" data-target="scene-intro" onclick="window.QTApp.goToScene('scene-intro')">
+          <span>A. Mở đầu</span>
+        </button>
+        <button type="button" class="nav-pill" data-target="scene-opportunities" onclick="window.QTApp.goToScene('scene-opportunities')">
+          <span>B. Thuận lợi & Cơ hội</span>
+        </button>
+        <button type="button" class="nav-pill" data-target="scene-challenges" onclick="window.QTApp.goToScene('scene-challenges')">
+          <span>C. Thách thức</span>
+        </button>
+        <button type="button" class="nav-pill transition-pill" data-target="scene-transition" onclick="window.QTApp.goToScene('scene-transition')">
+          <span>Tiếp tục trải nghiệm →</span>
+        </button>
+      </nav>
+
+      <div class="hud-controls">
+        <button type="button" id="toggle-visual-mode" class="control-chip" onclick="window.QTApp.toggleMediaMode()" title="Chuyển đổi giữa Ảnh tư liệu và Đồ họa địa danh Quảng Trị">
+          Chế độ ảnh: Tự động
+        </button>
+        <button type="button" id="toggle-motion-btn" class="control-chip" onclick="window.QTApp.toggleReducedMotion()" title="Bật/tắt chế độ giảm chuyển động">
+          Chuyển động: Đầy đủ
+        </button>
+      </div>
+    </div>
+    <div class="progress-track">
+      <div id="hud-progress-bar" class="progress-fill" style="width: 25%;"></div>
+    </div>
+  </header>
+
+  <!-- =====================================================================
+       KHUNG TRÌNH BÀY CHÍNH (PHẦN A, B, C + MÀN HÌNH CHUYỂN TIẾP)
+       ===================================================================== -->
+  <main id="experience-viewport">
+
+    <!-- ===================================================================
+         PHẦN A — MỞ ĐẦU
+         =================================================================== -->
+    <section id="scene-intro" class="scene-section active-scene" aria-labelledby="hero-main-heading">
+      <div class="hero-layout">
+        <div class="hero-copy-col">
+          <div class="hero-kicker">
+            <span>●</span>
+            <span>BÀI TRÌNH BÀY TƯƠNG TÁC ĐỊA PHƯƠNG • TỈNH QUẢNG TRỊ</span>
+          </div>
+          <h1 id="hero-main-heading" class="hero-title">
+            Cơ hội và thách thức trong quá trình hội nhập kinh tế quốc tế của tỉnh Quảng Trị
+          </h1>
+          <p class="hero-lead">
+            Từ vùng đất lịch sử bên đôi bờ Hiền Lương – Bến Hải, Quảng Trị đang chuyển mình thành <strong>cực kết nối năng lượng sạch, logistics và thương mại xuyên biên giới</strong> trên tuyến Hành lang kinh tế Đông – Tây (EWEC) nối liền Việt Nam – Lào – Thái Lan – Myanmar và ASEAN.
+          </p>
+
+          <div class="hero-coords-strip">
+            <div class="coord-card">
+              <div class="coord-label">Tọa độ chiến lược</div>
+              <div class="coord-value">Điểm đầu EWEC tại VN</div>
+            </div>
+            <div class="coord-card">
+              <div class="coord-label">Cửa ngõ giao thương</div>
+              <div class="coord-value">Lao Bảo – La Lay – Mỹ Thủy</div>
+            </div>
+            <div class="coord-card">
+              <div class="coord-label">Trụ cột phát triển</div>
+              <div class="coord-value">Năng lượng – Logistics – Du lịch</div>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
+            <button type="button" class="btn-primary" onclick="window.QTApp.goToScene('scene-opportunities')">
+              <span>Bắt đầu khám phá hành trình</span>
+              <span>→</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-visual-stack">
+          <div class="qt-media-frame hero-main-showcase" data-landmark="hien-luong">
+            <img id="hero-img-1"
+                 src="https://commons.wikimedia.org/wiki/Special:FilePath/Hien_Luong_bridge.jpg"
+                 alt="Cầu Hiền Lương bắc qua sông Bến Hải, tỉnh Quảng Trị"
+                 onerror="window.QTArtworkEngine.applyFallback(this, 'hien-luong')" />
+            <div class="qt-media-caption">
+              <span class="caption-text"><strong>Cầu Hiền Lương – Sông Bến Hải:</strong> Biểu tượng lịch sử và khát vọng vươn mình hội nhập của Quảng Trị.</span>
+              <span class="caption-badge">Vĩ tuyến 17 • Quảng Trị</span>
+            </div>
+          </div>
+
+          <div class="hero-mini-row">
+            <div class="qt-media-frame hero-mini-card" data-landmark="wind-huong-hoa">
+              <img id="hero-img-2"
+                   src="https://commons.wikimedia.org/wiki/Special:FilePath/Dien_gio_Huong_Linh_2.jpg"
+                   alt="Cánh đồng điện gió tại Hướng Hóa, Quảng Trị"
+                   onerror="window.QTArtworkEngine.applyFallback(this, 'wind-huong-hoa')" />
+              <div class="qt-media-caption">
+                <span class="caption-text"><strong>Điện gió Hướng Hóa:</strong> Trung tâm năng lượng tái tạo miền Trung.</span>
+                <span class="caption-badge">Năng lượng sạch</span>
+              </div>
+            </div>
+
+            <div class="qt-media-frame hero-mini-card" data-landmark="lao-bao-gate">
+              <img id="hero-img-3"
+                   src="https://commons.wikimedia.org/wiki/Special:FilePath/Lao_Bao_Border_Gate.jpg"
+                   alt="Cửa khẩu quốc tế Lao Bảo, Quảng Trị"
+                   onerror="window.QTArtworkEngine.applyFallback(this, 'lao-bao-gate')" />
+              <div class="qt-media-caption">
+                <span class="caption-text"><strong>Cửa khẩu quốc tế Lao Bảo:</strong> Cầu nối thương mại Việt Nam – Lào – Thái Lan.</span>
+                <span class="caption-badge">Hành lang EWEC</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scene-footer-nav">
+        <span style="font-size: 0.85rem; color: var(--text-muted);">
+          Mục tiêu bài trình bày: Phân tích toàn diện nội lực, cơ hội bứt phá và các thách thức thực tế của tỉnh Quảng Trị.
+        </span>
+        <button type="button" class="btn-primary" onclick="window.QTApp.goToScene('scene-opportunities')">
+          <span>Phần tiếp theo: Thuận lợi & Cơ hội</span>
+          <span>→</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         PHẦN B — THUẬN LỢI VÀ CƠ HỘI
+         (HỆ THỐNG ĐIỂM ĐÁNH SỐ 01..07 TRÊN BẢN ĐỒ & HIỆU ỨNG MORPH 2 LỚP)
+         =================================================================== -->
+    <section id="scene-opportunities" class="scene-section" aria-labelledby="opp-main-heading">
+      <div class="section-header-bar">
+        <div>
+          <div class="section-tag">PHẦN B • NỘI LỰC ĐỊA PHƯƠNG & ĐỘNG LỰC MỞ CỬA</div>
+          <h2 id="opp-main-heading" class="section-heading">Thuận lợi nền tảng & Cơ hội hội nhập quốc tế</h2>
+        </div>
+        <div class="submode-switcher" role="tablist" aria-label="Chuyển góc nhìn Phần B">
+          <button type="button" class="submode-btn active" onclick="window.QTApp.focusOpportunityPart('atlas')">
+            1. Các điểm khám phá Lợi thế (01 – 07)
+          </button>
+          <button type="button" class="submode-btn" onclick="window.QTApp.focusOpportunityPart('flow')">
+            2. Sơ đồ Luồng Cơ hội Hội nhập
+          </button>
+        </div>
+      </div>
+
+      <!-- TẦNG B1: CÁC ĐIỂM ĐÁNH SỐ TƯƠNG TÁC (01..07) TRÊN BẢN ĐỒ ĐỊA LÝ QUẢNG TRỊ -->
+      <div id="opp-atlas-block" class="atlas-explorer-grid">
+        <div class="interactive-map-stage">
+          <div class="map-top-bar">
+            <div>
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--qt-amber);">
+                BẢN ĐỒ ĐIỂM KHÁM PHÁ TƯƠNG TÁC (01 – 07)
+              </span>
+              <h3 style="font-size: 1.08rem; color: #fff;">Bấm vào từng điểm số 01 – 07 để chuyển hóa hình ảnh & kiến thức</h3>
+            </div>
+            <span class="caption-badge">7 Điểm Lợi Thế</span>
+          </div>
+
+          <div class="qt-map-viewport" id="qt-interactive-map-viewport">
+            <svg class="qt-svg-map" viewBox="0 0 680 380" preserveAspectRatio="none" aria-label="Bản đồ địa lý tỉnh Quảng Trị">
+              <defs>
+                <linearGradient id="mapLandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="rgba(16, 185, 129, 0.25)" />
+                  <stop offset="55%" stop-color="rgba(245, 158, 11, 0.2)" />
+                  <stop offset="100%" stop-color="rgba(20, 184, 166, 0.32)" />
+                </linearGradient>
+              </defs>
+
+              <!-- Vùng biển Đông & Đảo Cồn Cỏ -->
+              <path d="M 430,25 C 470,95 510,175 555,275 L 665,275 L 665,25 Z"
+                    fill="rgba(56, 189, 248, 0.08)" />
+              <text x="555" y="55" fill="#38bdf8" font-family="JetBrains Mono" font-size="11" opacity="0.8">BIỂN ĐÔNG</text>
+
+              <!-- Ranh giới khái quát tỉnh Quảng Trị -->
+              <path d="M 75,165 L 155,75 L 295,45 L 430,45 L 505,160 L 545,255 L 435,345 L 270,335 L 165,265 Z"
+                    fill="url(#mapLandGrad)" stroke="#14b8a6" stroke-width="2" />
+
+              <!-- Trục Hành lang kinh tế Đông - Tây (QL9: Lao Bảo -> Đông Hà -> Cửa Việt / Mỹ Thủy) -->
+              <path d="M 95,180 Q 250,175 385,172 T 525,225"
+                    fill="none" stroke="#f59e0b" stroke-width="3" stroke-dasharray="8 5" />
+              <text x="195" y="152" fill="#fbbf24" font-family="JetBrains Mono" font-size="10" font-weight="600">
+                TRỤC HÀNH LANG ĐÔNG – TÂY (EWEC • QL9)
+              </text>
+
+              <!-- Tia kết nối Morph động giữa điểm trước và điểm đang chọn -->
+              <path id="map-morph-beam" d="M 105,180 Q 245,140 105,180"
+                    fill="none" stroke="#14b8a6" stroke-width="2.2" opacity="0.75" />
+
+              <!-- Vòng tròn sóng định vị động di chuyển tới điểm đang được chọn -->
+              <circle id="map-active-locus-ring" cx="105" cy="180" r="28"
+                      fill="rgba(245, 158, 11, 0.14)" stroke="#f59e0b" stroke-width="1.8" stroke-dasharray="4 4" />
+            </svg>
+
+            <!-- Container chứa các nút đánh số 01..07 -->
+            <div id="map-numbered-pins-layer"></div>
+          </div>
+
+          <!-- Hàng nút chọn nhanh đánh số 01..07 đồng bộ dưới bản đồ -->
+          <div class="advantage-selector-pills" id="advantage-pills-container"></div>
+        </div>
+
+        <!-- Panel chi tiết lợi thế với Hiệu ứng Morph Hình ảnh 2 lớp & Nội dung -->
+        <div class="atlas-detail-panel" id="advantage-detail-card">
+          <div>
+            <div class="detail-header-row">
+              <div class="detail-pillar-tag" id="adv-detail-kicker">ĐIỂM KHÁM PHÁ 01 • ĐỊA KINH TẾ & BIÊN MẬU</div>
+              <span class="detail-number-badge" id="adv-detail-num-badge">01 / 07</span>
+            </div>
+
+            <div id="adv-morph-text-header" class="morph-content-block">
+              <h3 class="detail-title" id="adv-detail-title">
+                01 — Vị trí địa kinh tế, Hành lang Đông – Tây & Cửa khẩu quốc tế Lao Bảo
+              </h3>
+              <p class="detail-short-summary" id="adv-detail-summary">
+                Quảng Trị nằm ở điểm đầu tuyến Hành lang kinh tế Đông – Tây (EWEC) tại Việt Nam, kết nối trực tiếp Lào – Thái Lan – Myanmar ra Biển Đông qua Cửa khẩu quốc tế Lao Bảo.
+              </p>
+            </div>
+
+            <!-- Khung hình ảnh 2 lớp phục vụ hiệu ứng Morph mượt mà -->
+            <div class="qt-media-frame detail-media-slot" id="adv-media-wrapper" data-landmark="lao-bao-gate">
+              <div class="morph-media-layer" id="adv-layer-a" style="opacity: 1; z-index: 2;">
+                <img id="adv-img-a"
+                     src=""
+                     alt="Cửa khẩu quốc tế Lao Bảo trên Hành lang kinh tế Đông Tây"
+                     onerror="window.QTArtworkEngine.applyFallback(this, 'lao-bao-gate')" />
+              </div>
+              <div class="morph-media-layer" id="adv-layer-b" style="opacity: 0; z-index: 1;">
+                <img id="adv-img-b"
+                     src=""
+                     alt=""
+                     onerror="window.QTArtworkEngine.applyFallback(this, 'lao-bao-gate')" />
+              </div>
+              <div class="morph-light-sheen" aria-hidden="true"></div>
+
+              <div class="qt-media-caption">
+                <span class="caption-text" id="adv-detail-caption">
+                  Cửa khẩu quốc tế Lao Bảo — điểm đầu tuyến Hành lang kinh tế Đông – Tây tại Việt Nam.
+                </span>
+                <span class="caption-badge" id="adv-detail-badge">Điểm 01 • EWEC</span>
+              </div>
+            </div>
+          </div>
+
+          <ul class="detail-points morph-content-block" id="adv-detail-list"></ul>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 0.75rem; border-top: 1px solid var(--glass-border);">
+            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);" id="adv-counter-label">
+              Điểm khám phá 01 / 07
+            </span>
+            <div style="display: flex; gap: 0.5rem;">
+              <button type="button" class="control-chip" onclick="window.QTApp.stepAdvantage(-1)">← Điểm trước</button>
+              <button type="button" class="control-chip" onclick="window.QTApp.stepAdvantage(1)">Điểm tiếp →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TẦNG B2: SƠ ĐỒ LUỒNG GIAO THƯƠNG & CHUỖI CƠ HỘI HỘI NHẬP QUỐC TẾ -->
+      <div id="opp-flow-block" class="corridor-flow-stage">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <span class="section-tag">SƠ ĐỒ KẾT NỐI KINH TẾ & CHUỖI GIÁ TRỊ HỘI NHẬP</span>
+            <h3 style="font-family: var(--font-serif); font-size: 1.6rem;">
+              Từ lợi thế địa phương đến 4 chuỗi cơ hội phát triển đột phá
+            </h3>
+          </div>
+          <span style="font-size: 0.84rem; color: var(--text-secondary);">
+            Nhấp vào từng mắt xích trong luồng hội nhập để xem cơ chế lan tỏa kinh tế
+          </span>
+        </div>
+
+        <div class="ewec-pipeline" id="opportunity-flow-nodes">
+          <div class="flow-node active-flow" onclick="window.QTApp.selectFlowNode(0)">
+            <div class="flow-step-num"><span>MẮT XÍCH 01</span><span>➔</span></div>
+            <h4>Mở rộng thương mại, đầu tư, du lịch & xuất khẩu</h4>
+            <p>Kết nối hàng hóa qua cửa khẩu Lao Bảo, La Lay và cảng biển với thị trường Lào, Thái Lan, tiểu vùng sông Mê Kông và ASEAN.</p>
+          </div>
+
+          <div class="flow-node" onclick="window.QTApp.selectFlowNode(1)">
+            <div class="flow-step-num"><span>MẮT XÍCH 02</span><span>➔</span></div>
+            <h4>Thu hút vốn FDI/trong nước & tạo việc làm mới</h4>
+            <p>Khu kinh tế Đông Nam Quảng Trị và các khu công nghiệp thu hút dòng vốn vào năng lượng sạch, chế biến gỗ, nông – thủy sản.</p>
+          </div>
+
+          <div class="flow-node" onclick="window.QTApp.selectFlowNode(2)">
+            <div class="flow-step-num"><span>MẮT XÍCH 03</span><span>➔</span></div>
+            <h4>Chuyển giao công nghệ & nâng cao năng lực cạnh tranh</h4>
+            <p>Tiếp cận công nghệ tuabin gió, điện mặt trời, quản trị logistics hiện đại và tiêu chuẩn chất lượng quốc tế.</p>
+          </div>
+
+          <div class="flow-node" onclick="window.QTApp.selectFlowNode(3)">
+            <div class="flow-step-num"><span>MẮT XÍCH 04</span><span>★</span></div>
+            <h4>Tham gia chuỗi cung ứng khu vực & thúc đẩy tăng trưởng</h4>
+            <p>Đưa nông sản Khe Sanh, gỗ rừng trồng FSC, thủy sản và năng lượng Quảng Trị vào mạng lưới cung ứng toàn cầu.</p>
+          </div>
+        </div>
+
+        <div class="flow-spotlight-box" id="flow-spotlight-detail">
+          <div>
+            <div style="font-family: var(--font-mono); font-size: 0.73rem; color: var(--qt-amber); text-transform: uppercase;" id="flow-detail-tag">
+              TÁC ĐỘNG TRỰC TIẾP ĐẾN KINH TẾ ĐỊA PHƯƠNG
+            </div>
+            <div style="font-size: 1.02rem; font-weight: 600; color: #fff; margin-top: 0.25rem;" id="flow-detail-text">
+              Hành lang kinh tế Đông – Tây giúp rút ngắn quãng đường vận chuyển hàng hóa từ Lào, Đông Bắc Thái Lan ra Biển Đông qua Quảng Trị, mở rộng thị trường xuất khẩu nông – lâm – thủy sản và du lịch xuyên biên giới.
+            </div>
+          </div>
+          <button type="button" class="btn-primary" onclick="window.QTApp.goToScene('scene-challenges')">
+            <span>Phân tích Thách thức đi kèm</span>
+            <span>→</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="scene-footer-nav">
+        <button type="button" class="btn-secondary" onclick="window.QTApp.goToScene('scene-intro')">
+          <span>← Quay lại Mở đầu</span>
+        </button>
+        <button type="button" class="btn-primary" onclick="window.QTApp.goToScene('scene-challenges')">
+          <span>Phần C: Phân tích 7 Thách thức</span>
+          <span>→</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         PHẦN C — THÁCH THỨC
+         =================================================================== -->
+    <section id="scene-challenges" class="scene-section" aria-labelledby="chal-main-heading">
+      <div class="section-header-bar">
+        <div>
+          <div class="section-tag" style="color: #fca5a5;">PHẦN C • NHẬN DIỆN RÀO CẢN & RỦI RO HỘI NHẬP</div>
+          <h2 id="chal-main-heading" class="section-heading">7 Thách thức lớn trong quá trình hội nhập của Quảng Trị</h2>
+        </div>
+        <span class="caption-badge" style="border-color: rgba(239,68,68,0.45); color: #fca5a5; background: rgba(239,68,68,0.15);">
+          Bố cục Phân tích Tương phản & Ma trận Sức ép
+        </span>
+      </div>
+
+      <div class="challenge-diagnostic-layout">
+        <aside class="radar-console">
+          <div style="font-family: var(--font-mono); font-size: 0.72rem; color: #fca5a5; text-transform: uppercase;">
+            MA TRẬN PHÂN TÍCH RỦI RO & ĐIỂM NGHẼN
+          </div>
+          <h3 style="font-size: 1.2rem; margin: 0.3rem 0 0.75rem;" id="radar-active-title">
+            1. Thiên tai & Khí hậu khắc nghiệt
+          </h3>
+
+          <div class="radar-svg-wrap">
+            <svg viewBox="0 0 300 280" width="100%" height="100%" aria-label="Biểu đồ radar đánh giá các thách thức của Quảng Trị">
+              <polygon points="150,25 260,85 260,195 150,255 40,195 40,85" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1" />
+              <polygon points="150,65 225,105 225,175 150,215 75,175 75,105" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+              <polygon points="150,105 188,125 188,155 150,175 112,155 112,125" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+              <line x1="150" y1="25" x2="150" y2="255" stroke="rgba(255,255,255,0.1)" />
+              <line x1="40" y1="85" x2="260" y2="195" stroke="rgba(255,255,255,0.1)" />
+              <line x1="260" y1="85" x2="40" y2="195" stroke="rgba(255,255,255,0.1)" />
+
+              <polygon id="challenge-radar-poly"
+                       points="150,28 240,95 205,175 150,225 75,175 60,95"
+                       fill="rgba(224, 90, 54, 0.28)"
+                       stroke="#ef4444"
+                       stroke-width="2.5"
+                       style="transition: all 0.55s cubic-bezier(0.22, 1, 0.36, 1);" />
+
+              <text x="150" y="16" text-anchor="middle" fill="#fca5a5" font-size="10" font-family="JetBrains Mono">KHÍ HẬU / TỰ NHIÊN</text>
+              <text x="272" y="88" text-anchor="start" fill="#cbd5e1" font-size="9.5" font-family="JetBrains Mono">HẠ TẦNG</text>
+              <text x="272" y="202" text-anchor="start" fill="#cbd5e1" font-size="9.5" font-family="JetBrains Mono">NHÂN LỰC</text>
+              <text x="150" y="272" text-anchor="middle" fill="#cbd5e1" font-size="9.5" font-family="JetBrains Mono">VỐN & CÔNG NGHỆ</text>
+              <text x="28" y="202" text-anchor="end" fill="#cbd5e1" font-size="9.5" font-family="JetBrains Mono">THỊ TRƯỜNG</text>
+              <text x="28" y="88" text-anchor="end" fill="#cbd5e1" font-size="9.5" font-family="JetBrains Mono">AN NINH / VĂN HÓA</text>
+            </svg>
+          </div>
+
+          <div class="tension-meter-box">
+            <div style="display: flex; justify-content: space-between; font-size: 0.8rem;">
+              <span style="color: var(--text-secondary);">Mức độ cấp thiết cần giải pháp đồng bộ:</span>
+              <strong id="radar-urgency-label" style="color: var(--qt-amber);">Rất cao (Tác động trực tiếp hàng năm)</strong>
+            </div>
+            <div class="meter-bar-bg">
+              <div id="radar-urgency-bar" class="meter-bar-fill" style="width: 94%;"></div>
+            </div>
+            <p id="radar-summary-note" style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 0.5rem;">
+              Quảng Trị thường xuyên chịu ảnh hưởng nặng nề của bão, áp thấp nhiệt đới, lũ ống, lũ quét, sạt lở đất vùng miền núi và gió phơn Tây Nam (gió Lào) khô nóng kéo dài.
+            </p>
+          </div>
+        </aside>
+
+        <div class="challenge-accordion-stack" id="challenge-list-container"></div>
+      </div>
+
+      <div class="scene-footer-nav">
+        <button type="button" class="btn-secondary" onclick="window.QTApp.goToScene('scene-opportunities')">
+          <span>← Quay lại Phần B: Thuận lợi & Cơ hội</span>
+        </button>
+        <button type="button" class="btn-primary" onclick="window.QTApp.goToScene('scene-transition')">
+          <span>Tiếp tục trải nghiệm</span>
+          <span>→</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         MÀN HÌNH CHUYỂN TIẾP (MỞ FILE GAME RIÊNG `toibigay/index.html`)
+         =================================================================== -->
+    <section id="scene-transition" class="scene-section" aria-labelledby="transition-main-heading">
+      <div class="transition-portal-wrap">
+        <div class="transition-portal-card">
+          <div class="portal-morph-emblem" aria-hidden="true">
+            <svg class="portal-morph-svg" viewBox="0 0 120 120">
+              <circle class="portal-ring-outer" cx="60" cy="60" r="52" />
+              <path class="portal-ring-inner"
+                    d="M 60,18 L 96,39 L 96,81 L 60,102 L 24,81 L 24,39 Z" />
+              <circle cx="60" cy="60" r="10" fill="#f59e0b" />
+            </svg>
+          </div>
+
+          <div class="hero-kicker" style="margin-bottom: 1rem; background: rgba(20, 184, 166, 0.16); border-color: var(--qt-teal); color: #5eead4;">
+            <span>HOÀN TẤT HÀNH TRÌNH TRÌNH BÀY</span>
+            <span>•</span>
+            <span>CHUYỂN TIẾP TRẢI NGHIỆM</span>
+          </div>
+
+          <h2 id="transition-main-heading" class="transition-title">
+            Tiếp tục trải nghiệm
+          </h2>
+
+          <p class="transition-lead">
+            Bạn đã khám phá trọn vẹn bức tranh <strong>Thuận lợi, Cơ hội và Thách thức trong quá trình hội nhập kinh tế quốc tế của tỉnh Quảng Trị</strong>. Bấm nút bên dưới để mở sang trải nghiệm game riêng của bạn.
+          </p>
+
+          <!-- Thanh hiển thị đường dẫn tương đối đã cấu hình tới thư mục toibigay -->
+          <div class="path-config-bar">
+            <span style="font-size: 0.82rem; color: var(--text-secondary);">
+              Đường dẫn file game riêng:
+            </span>
+            <code id="configured-game-path-label">./toibigay/index.html</code>
+          </div>
+
+          <div style="display: flex; justify-content: center; align-items: center; gap: 1rem; flex-wrap: wrap;">
+            <button type="button" class="btn-next-experience" id="btn-open-external-game" onclick="window.QTApp.openNextExperience()">
+              <span>Mở trải nghiệm tiếp theo</span>
+              <span>→</span>
+            </button>
+          </div>
+
+          <div style="margin-top: 1.4rem; display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap;">
+            <button type="button" class="btn-secondary" onclick="window.QTApp.goToScene('scene-challenges')">
+              <span>← Quay lại Phần C: Thách thức</span>
+            </button>
+            <button type="button" class="btn-secondary" onclick="window.QTApp.goToScene('scene-intro')">
+              <span>↺ Xem lại từ Phần Mở đầu</span>
+            </button>
+          </div>
+
+          <div id="transition-config-feedback" class="transition-status-notice" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================================
+       DATA & CONTROLLER SCRIPT (ĐÃ SỬA TRIỆT ĐỂ LỖI MORPH & ĐƯỜNG DẪN GAME)
+       ===================================================================== -->
+  <script>
+    /**
+     * CẤU HÌNH ĐƯỜNG DẪN TƯƠNG ĐỐI TỚI FILE GAME RIÊNG CỦA BẠN (`toibigay/index.html`)
+     * Đặt file trình bày này ở cùng cấp với thư mục `toibigay/` (đã giải nén từ `toibigay.zip`).
+     */
+    const NEXT_EXPERIENCE_CONFIG = {
+      gameFilePath: "./toibigay/index.html",
+      openInNewTab: false
+    };
+
+    const QUANG_TRI_DATA = {
+      morphStates: {
+        'scene-intro': {
+          primaryPath: 'M 140,350 C 260,150 740,150 860,350 C 740,550 260,550 140,350 Z',
+          secondaryPath: 'M 80,350 L 920,350 M 500,70 L 500,630',
+          orbit1R: 190,
+          orbit2R: 290,
+          aura1: 'rgba(20, 184, 166, 0.22)',
+          aura2: 'rgba(224, 90, 54, 0.18)',
+          gridTilt: '18deg',
+          progress: 25
+        },
+        'scene-opportunities': {
+          primaryPath: 'M 130,270 L 250,130 L 470,95 L 680,105 L 820,275 L 860,420 L 690,565 L 430,545 L 240,430 Z',
+          secondaryPath: 'M 110,300 Q 380,280 560,270 T 850,340',
+          orbit1R: 250,
+          orbit2R: 340,
+          aura1: 'rgba(16, 185, 129, 0.24)',
+          aura2: 'rgba(245, 158, 11, 0.20)',
+          gridTilt: '26deg',
+          progress: 55
+        },
+        'scene-challenges': {
+          primaryPath: 'M 500,75 L 810,205 L 760,515 L 500,625 L 240,515 L 190,205 Z',
+          secondaryPath: 'M 500,75 L 500,625 M 190,205 L 760,515 M 810,205 L 240,515',
+          orbit1R: 160,
+          orbit2R: 260,
+          aura1: 'rgba(239, 68, 68, 0.20)',
+          aura2: 'rgba(245, 158, 11, 0.16)',
+          gridTilt: '12deg',
+          progress: 80
+        },
+        'scene-transition': {
+          primaryPath: 'M 500,90 L 830,350 L 500,610 L 170,350 Z',
+          secondaryPath: 'M 240,180 L 760,180 L 760,520 L 240,520 Z',
+          orbit1R: 140,
+          orbit2R: 330,
+          aura1: 'rgba(245, 158, 11, 0.25)',
+          aura2: 'rgba(20, 184, 166, 0.22)',
+          gridTilt: '22deg',
+          progress: 100
+        }
+      },
+
+      // 7 Điểm khám phá tương tác có đánh số (01 -> 07) trong Phần B
+      advantages: [
+        {
+          num: '01',
+          shortLabel: 'Lao Bảo & EWEC',
+          pinX: '15.5%',
+          pinY: '47.5%',
+          svgX: 105,
+          svgY: 180,
+          morphClip: 'inset(0% 0% 0% 0% round 16px)',
+          kicker: 'ĐIỂM KHÁM PHÁ 01 • VỊ TRÍ ĐỊA KINH TẾ & CỬA KHẨU',
+          title: 'Vị trí địa kinh tế, Hành lang Đông – Tây & Cửa khẩu quốc tế Lao Bảo',
+          summary: 'Quảng Trị là điểm đầu của tuyến Hành lang kinh tế Đông – Tây (EWEC) tại Việt Nam, kết nối trực tiếp Lào, Thái Lan, Myanmar ra Biển Đông qua Cửa khẩu quốc tế Lao Bảo.',
+          badge: 'Điểm 01 • EWEC',
+          landmarkKey: 'lao-bao-gate',
+          imgUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Lao_Bao_Border_Gate.jpg',
+          caption: 'Cửa khẩu quốc tế Lao Bảo trên trục Hành lang kinh tế Đông – Tây kết nối Việt Nam – Lào – Thái Lan – Myanmar.',
+          points: [
+            'Nằm ở trung điểm đất nước, giao điểm giữa trục giao thông Bắc – Nam và trục Hành lang kinh tế Đông – Tây (EWEC).',
+            'Là cửa ngõ ngắn nhất và thuận lợi nhất để hàng hóa từ Lào, Đông Bắc Thái Lan, Myanmar tiếp cận Biển Đông.',
+            'Tạo lợi thế đặc biệt để phát triển kinh tế biên mậu, dịch vụ trung chuyển, kho bãi và logistics quốc tế.'
+          ]
+        },
+        {
+          num: '02',
+          shortLabel: 'Đất đỏ & Rừng FSC',
+          pinX: '32.5%',
+          pinY: '69.5%',
+          svgX: 221,
+          svgY: 264,
+          morphClip: 'inset(0% 0% 0% 0% round 22px)',
+          kicker: 'ĐIỂM KHÁM PHÁ 02 • TÀI NGUYÊN ĐẤT ĐAI & LÂM NGHIỆP',
+          title: 'Điều kiện đất đai, rừng trồng bền vững và tài nguyên khoáng sản',
+          summary: 'Vùng đất đỏ bazan màu mỡ và diện tích rừng trồng đạt chứng chỉ quốc tế FSC tạo nguồn nguyên liệu lớn cho nông – lâm nghiệp chế biến xuất khẩu.',
+          badge: 'Điểm 02 • Nông – Lâm',
+          landmarkKey: 'khe-sanh-agri',
+          imgUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Khe_Sanh_combat_base_2010.jpg',
+          caption: 'Vùng đồi núi đất đỏ bazan Hướng Hóa – Khe Sanh nổi tiếng với cà phê Arabica, hồ tiêu và rừng trồng FSC.',
+          points: [
+            'Vùng đất đỏ bazan màu mỡ tại Hướng Hóa, Vĩnh Linh, Gio Linh rất phù hợp phát triển cây công nghiệp đặc sản (cà phê Khe Sanh, hồ tiêu, cao su, dược liệu).',
+            'Diện tích rừng và đất lâm nghiệp lớn, đi đầu cả nước về phát triển rừng trồng có chứng chỉ quản lý rừng bền vững quốc tế (FSC).',
+            'Nguồn nguyên liệu dồi dào cho công nghiệp chế biến gỗ xuất khẩu, viên nén năng lượng và vật liệu xây dựng (đá vôi, cát trắng thạch anh).'
+          ]
+        },
+        {
+          num: '03',
+          shortLabel: 'Biển & Đảo Cồn Cỏ',
+          pinX: '85.5%',
+          pinY: '35.5%',
+          svgX: 581,
+          svgY: 135,
+          morphClip: 'inset(0% 0% 0% 0% round 18px)',
+          kicker: 'ĐIỂM KHÁM PHÁ 03 • KINH TẾ BIỂN, THỦY SẢN & DU LỊCH',
+          title: 'Tiềm năng biển, thủy sản và du lịch nghỉ dưỡng biển đảo',
+          summary: 'Tam giác du lịch biển Cửa Tùng – Cửa Việt – Đảo Cồn Cỏ cùng ngư trường rộng lớn mở ra không gian phát triển kinh tế biển và du lịch sinh thái.',
+          badge: 'Điểm 03 • Biển Đảo',
+          landmarkKey: 'con-co-sea',
+          imgUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Cua_Tung_Beach.jpg',
+          caption: 'Bờ biển Quảng Trị với tam giác du lịch biển Cửa Tùng – Cửa Việt – Đảo Cồn Cỏ.',
+          points: [
+            'Đường bờ biển dài với các bãi tắm đẹp như Cửa Tùng, Cửa Việt, Mỹ Thủy và huyện đảo Cồn Cỏ giàu đa dạng sinh học biển.',
+            'Ngư trường rộng, thuận lợi cho khai thác, nuôi trồng và chế biến thủy hải sản phục vụ thị trường trong nước và xuất khẩu.',
+            'Tiềm năng lớn để kết hợp phát triển đô thị ven biển, du lịch sinh thái biển đảo và dịch vụ hậu cần nghề cá.'
+          ]
+        },
+        {
+          num: '04',
+          shortLabel: 'Di tích Lịch sử',
+          pinX: '59.5%',
+          pinY: '25.0%',
+          svgX: 405,
+          svgY: 95,
+          morphClip: 'inset(0% 0% 0% 0% round 24px)',
+          kicker: 'ĐIỂM KHÁM PHÁ 04 • DI SẢN LỊCH SỬ & VĂN HÓA',
+          title: 'Hệ thống di tích lịch sử đặc biệt và giá trị văn hóa',
+          summary: 'Quảng Trị hội tụ hệ thống di tích quốc gia đặc biệt (Hiền Lương – Bến Hải, Thành Cổ, Vịnh Mốc), tạo lợi thế độc bản về du lịch lịch sử – văn hóa quốc tế.',
+          badge: 'Điểm 04 • Di sản',
+          landmarkKey: 'hien-luong',
+          imgUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Hien_Luong_bridge.jpg',
+          caption: 'Đôi bờ Hiền Lương – Bến Hải, Thành cổ Quảng Trị và Địa đạo Vịnh Mốc là những di tích quốc gia đặc biệt.',
+          points: [
+            'Sở hữu mật độ di tích lịch sử cách mạng dày đặc, tiêu biểu là Thành cổ Quảng Trị, Đôi bờ Hiền Lương – Bến Hải, Địa đạo Vịnh Mốc, Đường Trường Sơn.',
+            'Bản sắc văn hóa đa dạng của cộng đồng các dân tộc Kinh, Vân Kiều, Pa Cô với nhiều lễ hội truyền thống độc đáo.',
+            'Nền tảng quan trọng để xây dựng thương hiệu "Du lịch Hoài niệm và Khát vọng Hòa bình" thu hút du khách quốc tế.'
+          ]
+        },
+        {
+          num: '05',
+          shortLabel: 'Năng lượng tái tạo',
+          pinX: '31.5%',
+          pinY: '31.5%',
+          svgX: 214,
+          svgY: 120,
+          morphClip: 'inset(0% 0% 0% 0% round 20px)',
+          kicker: 'ĐIỂM KHÁM PHÁ 05 • TRUNG TÂM NĂNG LƯỢNG SẠCH',
+          title: 'Năng lượng tái tạo và tiềm năng công nghiệp năng lượng',
+          summary: 'Với tốc độ gió ổn định trên dãy Trường Sơn và bức xạ mặt trời cao, Quảng Trị đang vươn lên thành trung tâm năng lượng tái tạo của miền Trung.',
+          badge: 'Điểm 05 • Điện gió',
+          landmarkKey: 'wind-huong-hoa',
+          imgUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Dien_gio_Huong_Linh_2.jpg',
+          caption: 'Vùng miền tây Quảng Trị có tốc độ gió ổn định, lý tưởng cho các cụm trang trại điện gió quy mô lớn.',
+          points: [
+            'Khu vực miền núi phía Tây (Hướng Hóa, Đakrông) có tiềm năng gió rất lớn và số giờ nắng cao ở vùng đồng bằng ven biển.',
+            'Đang phát triển mạnh các dự án điện gió, điện mặt trời, thủy điện và định hướng trung tâm điện khí tại Khu kinh tế Đông Nam.',
+            'Tạo động lực thu hút các nhà đầu tư quốc tế trong lĩnh vực chuyển dịch năng lượng xanh và kinh tế tuần hoàn.'
+          ]
+        },
+        {
+          num: '06',
+          shortLabel: 'Cảng & Giao thông',
+          pinX: '75.5%',
+          pinY: '62.0%',
+          svgX: 513,
+          svgY: 235,
+          morphClip: 'inset(0% 0% 0% 0% round 16px)',
+          kicker: 'ĐIỂM KHÁM PHÁ 06 • HẠ TẦNG GIAO THÔNG & CẢNG BIỂN',
+          title: 'Hạ tầng giao thông, cặp cửa khẩu quốc tế và cảng biển Mỹ Thủy',
+          summary: 'Sự kết hợp giữa Quốc lộ 9, Quốc lộ 1A, cao tốc Bắc – Nam, cặp cửa khẩu Lao Bảo – La Lay và Cảng nước sâu Mỹ Thủy tạo mạng lưới kết nối liên hoàn.',
+          badge: 'Điểm 06 • Hạ tầng',
+          landmarkKey: 'my-thuy-port',
+          imgUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/National_Route_9_Vietnam.jpg',
+          caption: 'Mạng lưới kết nối đa phương thức: Quốc lộ 1A, Quốc lộ 9, đường Hồ Chí Minh, cửa khẩu quốc tế và cảng biển.',
+          points: [
+            'Sở hữu 2 cửa khẩu quốc tế đường bộ quan trọng với Lào là Lao Bảo và La Lay, cùng Khu kinh tế – thương mại đặc biệt Lao Bảo.',
+            'Hội tụ đủ các trục giao thông huyết mạch: Quốc lộ 1A, đường sắt Bắc – Nam, đường Hồ Chí Minh, Quốc lộ 9, cao tốc Cam Lộ – La Sơn / Vạn Ninh – Cam Lộ.',
+            'Các dự án chiến lược như Cảng nước sâu Mỹ Thủy và Cảng hàng không Quảng Trị mở ra không gian kết nối hàng hải và hàng không quốc tế.'
+          ]
+        },
+        {
+          num: '07',
+          shortLabel: 'Nguồn nhân lực',
+          pinX: '56.5%',
+          pinY: '46.0%',
+          svgX: 384,
+          svgY: 175,
+          morphClip: 'inset(0% 0% 0% 0% round 20px)',
+          kicker: 'ĐIỂM KHÁM PHÁ 07 • NGUỒN NHÂN LỰC ĐỊA PHƯƠNG',
+          title: 'Nguồn nhân lực trẻ, cần cù và giàu ý chí vươn lên',
+          summary: 'Lực lượng lao động trẻ, hiếu học cùng các chính sách liên kết đào tạo nghề là nền tảng quan trọng để đón nhận các dự án đầu tư công nghiệp – dịch vụ mới.',
+          badge: 'Điểm 07 • Nhân lực',
+          landmarkKey: 'dong-ha-human',
+          imgUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Dong_Ha_City.jpg',
+          caption: 'Lực lượng lao động Quảng Trị có truyền thống hiếu học, chịu thương chịu khó và sẵn sàng tiếp thu kỹ năng mới.',
+          points: [
+            'Nguồn lao động dồi dào, chi phí cạnh tranh, có tinh thần vượt khó, kỷ luật và truyền thống hiếu học.',
+            'Lực lượng lao động trẻ ngày càng năng động, có khả năng tiếp cận nhanh công nghệ số và quy trình sản xuất công nghiệp.',
+            'Chính quyền địa phương chú trọng cải cách hành chính, liên kết đào tạo nghề gắn với nhu cầu tuyển dụng của doanh nghiệp.'
+          ]
+        }
+      ],
+
+      flowDetails: [
+        {
+          tag: 'CƠ HỘI 01 • THƯƠNG MẠI, ĐẦU TƯ, DU LỊCH & THỊ TRƯỜNG XUẤT KHẨU',
+          text: 'Hội nhập giúp Quảng Trị mở rộng giao thương xuyên biên giới qua Lao Bảo và La Lay, đưa nông – lâm – thủy sản địa phương vươn tới thị trường ASEAN, Đông Á và châu Âu, đồng thời đón dòng khách du lịch quốc tế trên tuyến Di sản miền Trung.'
+        },
+        {
+          tag: 'CƠ HỘI 02 • THU HÚT VỐN & TẠO VIỆC LÀM BỀN VỮNG',
+          text: 'Các hiệp định thương mại tự do và cơ chế ưu đãi tại Khu kinh tế Đông Nam, Khu kinh tế Lao Bảo thu hút dòng vốn FDI và vốn trong nước vào hạ tầng, năng lượng và chế biến, qua đó tạo thêm nhiều việc làm ổn định cho người lao động địa phương.'
+        },
+        {
+          tag: 'CƠ HỘI 03 • CHUYỂN GIAO CÔNG NGHỆ & NÂNG CAO NĂNG LỰC CẠNH TRANH',
+          text: 'Quá trình hợp tác với các tập đoàn lớn giúp doanh nghiệp Quảng Trị tiếp nhận công nghệ hiện đại, chuẩn hóa quy trình quản trị, truy xuất nguồn gốc và nâng cao sức cạnh tranh của sản phẩm địa phương.'
+        },
+        {
+          tag: 'CƠ HỘI 04 • THAM GIA CHUỖI CUNG ỨNG KHU VỰC & THÚC ĐẨY TĂNG TRƯỞNG',
+          text: 'Quảng Trị từng bước thoát khỏi thế sản xuất nhỏ lẻ để tham gia vào chuỗi cung ứng gỗ FSC, nông sản sạch, năng lượng tái tạo và dịch vụ logistics trên tuyến Hành lang kinh tế Đông – Tây, thúc đẩy chuyển dịch cơ cấu kinh tế.'
+        }
+      ],
+
+      challenges: [
+        {
+          code: 'THÁCH THỨC 01',
+          title: 'Bão, lũ, lũ quét, sạt lở và điều kiện khí hậu khắc nghiệt',
+          urgencyText: 'Rất cao (Tác động trực tiếp hàng năm)',
+          urgencyPct: 94,
+          radarPoints: '150,28 240,95 205,175 150,225 75,175 60,95',
+          summary: 'Quảng Trị thường xuyên chịu ảnh hưởng nặng nề của bão, áp thấp nhiệt đới, lũ ống, lũ quét, sạt lở đất vùng miền núi và gió phơn Tây Nam (gió Lào) khô nóng kéo dài.',
+          riskCol: 'Gây hư hại kết cấu hạ tầng giao thông, thủy lợi; làm gián đoạn sản xuất nông – lâm – ngư nghiệp và chuỗi vận tải trên Quốc lộ 9, đường Hồ Chí Minh.',
+          responseCol: 'Đòi hỏi nguồn vốn lớn để đầu tư hạ tầng chống chịu thiên tai, quy hoạch dân cư an toàn và chuyển đổi cơ cấu cây trồng, vật nuôi thích ứng biến đổi khí hậu.'
+        },
+        {
+          code: 'THÁCH THỨC 02',
+          title: 'Hệ thống kết cấu hạ tầng chưa đồng bộ',
+          urgencyText: 'Cao (Điểm nghẽn logistics)',
+          urgencyPct: 88,
+          radarPoints: '150,70 258,85 215,180 150,240 80,175 75,105',
+          summary: 'Mặc dù có vị trí chiến lược, hạ tầng giao thông kết nối cửa khẩu, cảng biển, khu công nghiệp và hệ thống kho bãi logistics của tỉnh vẫn đang trong quá trình hoàn thiện.',
+          riskCol: 'Làm tăng chi phí vận chuyển, giảm sức hấp dẫn đối với các nhà đầu tư công nghiệp quy mô lớn và hạn chế năng lực thông quan hàng hóa xuyên biên giới.',
+          responseCol: 'Cần đẩy nhanh tiến độ các dự án động lực như cảng nước sâu Mỹ Thủy, nâng cấp Quốc lộ 9, cao tốc và hạ tầng Khu kinh tế Đông Nam.'
+        },
+        {
+          code: 'THÁCH THỨC 03',
+          title: 'Hạn chế về lao động chất lượng cao và nhân lực kỹ thuật',
+          urgencyText: 'Cao (Rào cản công nghiệp hiện đại)',
+          urgencyPct: 84,
+          radarPoints: '150,85 220,105 258,195 150,230 85,170 85,110',
+          summary: 'Tỷ lệ lao động qua đào tạo chuyên sâu, kỹ sư công nghệ cao, nhân lực vận hành công nghiệp năng lượng, logistics quốc tế và ngoại ngữ còn thiếu hụt.',
+          riskCol: 'Khó đáp ứng ngay nhu cầu tuyển dụng kỹ thuật cao của các dự án FDI; tình trạng chảy máu chất xám khi lao động trẻ di cư đến các đô thị lớn.',
+          responseCol: 'Cần gắn kết chặt chẽ giữa cơ sở đào tạo nghề với doanh nghiệp và có chính sách thu hút, giữ chân nhân lực chất lượng cao.'
+        },
+        {
+          code: 'THÁCH THỨC 04',
+          title: 'Công nghiệp, chế biến sâu và giá trị gia tăng còn hạn chế',
+          urgencyText: 'Cao (Giá trị xuất khẩu chưa tương xứng)',
+          urgencyPct: 86,
+          radarPoints: '150,80 230,100 235,185 150,248 70,185 80,105',
+          summary: 'Quy mô công nghiệp của tỉnh còn nhỏ; nhiều mặt hàng nông – lâm – thủy sản vẫn xuất khẩu dưới dạng thô hoặc sơ chế, thiếu các nhà máy chế biến sâu.',
+          riskCol: 'Giá trị gia tăng giữ lại địa phương thấp, dễ bị ép giá và phụ thuộc vào thương lái hoặc biến động nguyên liệu đầu vào.',
+          responseCol: 'Ưu tiên thu hút công nghiệp chế biến sâu gỗ FSC, cà phê, dược liệu, thủy sản và xây dựng thương hiệu OCOP đạt chuẩn quốc tế.'
+        },
+        {
+          code: 'THÁCH THỨC 05',
+          title: 'Khó khăn về vốn, công nghệ và quản trị của doanh nghiệp nhỏ và vừa',
+          urgencyText: 'Trung bình – Cao (Nội lực doanh nghiệp)',
+          urgencyPct: 82,
+          radarPoints: '150,90 210,110 230,185 150,255 65,190 90,115',
+          summary: 'Phần lớn doanh nghiệp tại Quảng Trị có quy mô nhỏ và siêu nhỏ, năng lực tài chính mỏng, trình độ công nghệ và kỹ năng quản trị hiện đại còn hạn chế.',
+          riskCol: 'Gặp nhiều rào cản khi tiếp cận tín dụng xanh, đáp ứng các tiêu chuẩn kỹ thuật khắt khe (SPS, TBT, tiêu chuẩn giảm phát thải) của thị trường quốc tế.',
+          responseCol: 'Cần hỗ trợ chuyển đổi số, tư vấn tiêu chuẩn chất lượng, kết nối tín dụng và thúc đẩy liên kết chuỗi giữa doanh nghiệp lớn với SME địa phương.'
+        },
+        {
+          code: 'THÁCH THỨC 06',
+          title: 'Biến động kinh tế, thị trường và địa chính trị bên ngoài',
+          urgencyText: 'Thường trực (Rủi ro vĩ mô)',
+          urgencyPct: 79,
+          radarPoints: '150,85 205,110 205,170 150,230 42,195 75,100',
+          summary: 'Khi hội nhập sâu, kinh tế địa phương chịu tác động nhanh hơn từ lạm phát toàn cầu, biến động tỷ giá, chi phí vận tải biển và sự thay đổi chính sách thương mại của các nước.',
+          riskCol: 'Đơn hàng xuất khẩu gỗ, dệt may, nông sản và dòng vốn đầu tư có thể bị chững lại khi thị trường thế giới suy giảm.',
+          responseCol: 'Đa dạng hóa thị trường xuất khẩu, kết hợp hài hòa giữa thị trường nội địa và thị trường quốc tế để tăng tính tự chủ.'
+        },
+        {
+          code: 'THÁCH THỨC 07',
+          title: 'Buôn lậu, tội phạm xuyên biên giới, dịch bệnh & nguy cơ mai một bản sắc văn hóa',
+          urgencyText: 'Rất quan trọng (An ninh & Bản sắc)',
+          urgencyPct: 90,
+          radarPoints: '150,60 215,100 195,165 150,210 55,190 42,85',
+          summary: 'Đường biên giới dài trên bộ và trên biển cùng lưu lượng giao thương lớn làm gia tăng nguy cơ buôn lậu, gian lận thương mại, ma túy, xuất nhập cảnh trái phép, dịch bệnh xuyên biên giới và sự pha tạp văn hóa.',
+          riskCol: 'Gây mất an ninh trật tự vùng biên, thất thu thuế, đe dọa sản xuất trong nước và làm mai một các giá trị văn hóa truyền thống của đồng bào địa phương.',
+          responseCol: 'Kết hợp chặt chẽ phát triển kinh tế với củng cố quốc phòng – an ninh biên giới và bảo tồn, phát huy di sản văn hóa Quảng Trị.'
+        }
+      ]
+    };
+
+    window.QTApp = (function () {
+      let currentScene = 'scene-intro';
+      let currentAdvIndex = 0;
+      let activeMediaLayer = 'a';
+      let morphTimerId = null;
+      let morphToken = 0;
+      let forceVectorMode = false;
+      let reducedMotion = false;
+
+      function init() {
+        const pathLabel = document.getElementById('configured-game-path-label');
+        if (pathLabel) {
+          pathLabel.textContent = NEXT_EXPERIENCE_CONFIG.gameFilePath || '(Chưa cấu hình)';
+        }
+        renderNumberedMapPins();
+        renderAdvantagePills();
+        selectAdvantage(0, true);
+        renderChallenges();
+      }
+
+      function goToScene(sceneId) {
+        if (!QUANG_TRI_DATA.morphStates[sceneId]) return;
+        currentScene = sceneId;
+
+        document.querySelectorAll('.scene-section').forEach(sec => {
+          sec.classList.toggle('active-scene', sec.id === sceneId);
+        });
+
+        document.querySelectorAll('.nav-pill').forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.target === sceneId);
+        });
+
+        applyMorphState(sceneId);
+        window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' });
+      }
+
+      function applyMorphState(sceneId) {
+        const cfg = QUANG_TRI_DATA.morphStates[sceneId];
+        if (!cfg) return;
+
+        const primaryPath = document.getElementById('morph-primary');
+        const secondaryPath = document.getElementById('morph-secondary');
+        const orbit1 = document.getElementById('morph-orbit-1');
+        const orbit2 = document.getElementById('morph-orbit-2');
+        const backdrop = document.getElementById('spatial-backdrop');
+        const grid = document.querySelector('.ambient-grid');
+        const progressBar = document.getElementById('hud-progress-bar');
+
+        if (primaryPath) primaryPath.setAttribute('d', cfg.primaryPath);
+        if (secondaryPath) secondaryPath.setAttribute('d', cfg.secondaryPath);
+        if (orbit1) orbit1.setAttribute('r', cfg.orbit1R);
+        if (orbit2) orbit2.setAttribute('r', cfg.orbit2R);
+
+        if (backdrop) {
+          backdrop.style.setProperty('--aura-primary', cfg.aura1);
+          backdrop.style.setProperty('--aura-secondary', cfg.aura2);
+        }
+        if (grid) {
+          grid.style.setProperty('--grid-tilt', cfg.gridTilt);
+        }
+        if (progressBar) {
+          progressBar.style.width = cfg.progress + '%';
+        }
+      }
+
+      /**
+       * Nạp ảnh an toàn: Hiển thị ngay đồ họa địa danh Quảng Trị sắc nét và tự động
+       * nâng cấp lên ảnh tư liệu nếu kết nối mạng tải thành công.
+       */
+      function loadSafeMediaIntoImg(imgEl, item) {
+        if (!imgEl || !item) return;
+        const fallbackUri = window.QTArtworkEngine.getDataUri(item.landmarkKey);
+        imgEl.alt = item.title;
+
+        if (forceVectorMode) {
+          imgEl.src = fallbackUri;
+          return;
+        }
+
+        // Đặt đồ họa địa danh Quảng Trị làm nền tức thì để không bao giờ bị trống hay nháy icon lỗi
+        imgEl.src = fallbackUri;
+
+        const probe = new Image();
+        probe.onload = function () {
+          if (!forceVectorMode && imgEl.dataset.targetKey === item.landmarkKey) {
+            imgEl.src = item.imgUrl;
+          }
+        };
+        imgEl.dataset.targetKey = item.landmarkKey;
+        probe.src = item.imgUrl;
+      }
+
+      function toggleMediaMode() {
+        forceVectorMode = !forceVectorMode;
+        const btn = document.getElementById('toggle-visual-mode');
+        if (btn) {
+          btn.textContent = forceVectorMode ? 'Chế độ ảnh: Đồ họa Vector QT' : 'Chế độ ảnh: Tự động';
+          btn.classList.toggle('active-mode', forceVectorMode);
+        }
+
+        const heroConfigs = [
+          { id: 'hero-img-1', key: 'hien-luong', url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Hien_Luong_bridge.jpg' },
+          { id: 'hero-img-2', key: 'wind-huong-hoa', url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Dien_gio_Huong_Linh_2.jpg' },
+          { id: 'hero-img-3', key: 'lao-bao-gate', url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Lao_Bao_Border_Gate.jpg' }
+        ];
+
+        heroConfigs.forEach(cfg => {
+          const el = document.getElementById(cfg.id);
+          if (!el) return;
+          if (forceVectorMode) {
+            el.src = window.QTArtworkEngine.getDataUri(cfg.key);
+          } else {
+            el.src = cfg.url;
+          }
+        });
+
+        selectAdvantage(currentAdvIndex, true);
+      }
+
+      function toggleReducedMotion() {
+        reducedMotion = !reducedMotion;
+        document.body.classList.toggle('reduced-motion', reducedMotion);
+        const btn = document.getElementById('toggle-motion-btn');
+        if (btn) {
+          btn.textContent = reducedMotion ? 'Chuyển động: Giảm' : 'Chuyển động: Đầy đủ';
+          btn.classList.toggle('active-mode', reducedMotion);
+        }
+      }
+
+      // PHẦN B: CÁC ĐIỂM ĐÁNH SỐ (01..07) & HIỆU ỨNG MORPH
+      function renderNumberedMapPins() {
+        const pinLayer = document.getElementById('map-numbered-pins-layer');
+        if (!pinLayer) return;
+
+        pinLayer.innerHTML = QUANG_TRI_DATA.advantages.map((item, idx) => `
+          <button type="button"
+                  class="numbered-hotspot-pin ${idx === 0 ? 'active-pin' : ''}"
+                  style="left: ${item.pinX}; top: ${item.pinY};"
+                  data-pin-index="${idx}"
+                  aria-label="Điểm khám phá ${item.num}: ${item.title}"
+                  onclick="window.QTApp.selectAdvantage(${idx})">
+            <span>${item.num}</span>
+            <span class="pin-mini-tooltip">${item.shortLabel}</span>
+          </button>
+        `).join('');
+      }
+
+      function renderAdvantagePills() {
+        const container = document.getElementById('advantage-pills-container');
+        if (!container) return;
+        container.innerHTML = QUANG_TRI_DATA.advantages.map((item, idx) => `
+          <button type="button"
+                  class="adv-chip ${idx === 0 ? 'active' : ''}"
+                  onclick="window.QTApp.selectAdvantage(${idx})">
+            <span class="chip-num">${item.num}</span>
+            <span>${item.shortLabel}</span>
+          </button>
+        `).join('');
+      }
+
+      function selectAdvantage(index, immediate = false) {
+        const total = QUANG_TRI_DATA.advantages.length;
+        const prevItem = QUANG_TRI_DATA.advantages[currentAdvIndex] || QUANG_TRI_DATA.advantages[0];
+        const nextIndex = (index + total) % total;
+        const item = QUANG_TRI_DATA.advantages[nextIndex];
+        currentAdvIndex = nextIndex;
+
+        document.querySelectorAll('.numbered-hotspot-pin').forEach((pin, idx) => {
+          pin.classList.toggle('active-pin', idx === nextIndex);
+        });
+        document.querySelectorAll('.adv-chip').forEach((chip, idx) => {
+          chip.classList.toggle('active', idx === nextIndex);
+        });
+
+        // Morph vòng định vị và đường tia kết nối trên bản đồ SVG
+        const locusRing = document.getElementById('map-active-locus-ring');
+        if (locusRing) {
+          locusRing.setAttribute('cx', item.svgX);
+          locusRing.setAttribute('cy', item.svgY);
+        }
+
+        const beam = document.getElementById('map-morph-beam');
+        if (beam && prevItem) {
+          const ctrlX = Math.round((prevItem.svgX + item.svgX) / 2);
+          const ctrlY = Math.max(40, Math.round(Math.min(prevItem.svgY, item.svgY) - 45));
+          beam.setAttribute('d', `M ${prevItem.svgX},${prevItem.svgY} Q ${ctrlX},${ctrlY} ${item.svgX},${item.svgY}`);
+        }
+
+        const mediaWrapper = document.getElementById('adv-media-wrapper');
+        const layerA = document.getElementById('adv-layer-a');
+        const layerB = document.getElementById('adv-layer-b');
+        const imgA = document.getElementById('adv-img-a');
+        const imgB = document.getElementById('adv-img-b');
+        const textHeader = document.getElementById('adv-morph-text-header');
+        const listEl = document.getElementById('adv-detail-list');
+
+        if (morphTimerId) {
+          clearTimeout(morphTimerId);
+          morphTimerId = null;
+        }
+        const thisToken = ++morphToken;
+
+        const updateTextDOM = () => {
+          document.getElementById('adv-detail-kicker').textContent = item.kicker;
+          document.getElementById('adv-detail-num-badge').textContent = `${item.num} / 0${total}`;
+          document.getElementById('adv-detail-title').textContent = `${item.num} — ${item.title}`;
+          document.getElementById('adv-detail-summary').textContent = item.summary;
+          document.getElementById('adv-detail-caption').textContent = item.caption;
+          document.getElementById('adv-detail-badge').textContent = item.badge;
+          document.getElementById('adv-counter-label').textContent = `Điểm khám phá ${item.num} / 0${total}`;
+          listEl.innerHTML = item.points.map(pt => `<li>${pt}</li>`).join('');
+        };
+
+        if (immediate || reducedMotion) {
+          updateTextDOM();
+          loadSafeMediaIntoImg(imgA, item);
+          layerA.style.opacity = '1';
+          layerA.style.transform = 'scale(1)';
+          layerA.style.filter = 'none';
+          layerB.style.opacity = '0';
+          activeMediaLayer = 'a';
+          mediaWrapper.style.setProperty('--morph-clip', item.morphClip);
+          mediaWrapper.classList.remove('is-morphing-media');
+          textHeader.classList.remove('is-morphing-text');
+          listEl.classList.remove('is-morphing-text');
+          return;
+        }
+
+        const incomingLayer = activeMediaLayer === 'a' ? layerB : layerA;
+        const incomingImg = activeMediaLayer === 'a' ? imgB : imgA;
+        const outgoingLayer = activeMediaLayer === 'a' ? layerA : layerB;
+
+        loadSafeMediaIntoImg(incomingImg, item);
+
+        incomingLayer.style.zIndex = '3';
+        outgoingLayer.style.zIndex = '2';
+        incomingLayer.style.transform = 'scale(1.08)';
+        incomingLayer.style.filter = 'brightness(1.16) saturate(1.12)';
+        incomingLayer.style.opacity = '1';
+
+        outgoingLayer.style.transform = 'scale(0.94)';
+        outgoingLayer.style.opacity = '0';
+
+        mediaWrapper.classList.remove('is-morphing-media');
+        void mediaWrapper.offsetWidth;
+        mediaWrapper.classList.add('is-morphing-media');
+
+        textHeader.classList.add('is-morphing-text');
+        listEl.classList.add('is-morphing-text');
+
+        activeMediaLayer = activeMediaLayer === 'a' ? 'b' : 'a';
+
+        morphTimerId = setTimeout(() => {
+          if (thisToken !== morphToken) return;
+          updateTextDOM();
+          incomingLayer.style.transform = 'scale(1)';
+          incomingLayer.style.filter = 'brightness(1) saturate(1)';
+          mediaWrapper.style.setProperty('--morph-clip', item.morphClip);
+          mediaWrapper.classList.remove('is-morphing-media');
+          textHeader.classList.remove('is-morphing-text');
+          listEl.classList.remove('is-morphing-text');
+        }, 180);
+      }
+
+      function stepAdvantage(delta) {
+        selectAdvantage(currentAdvIndex + delta);
+      }
+
+      function focusOpportunityPart(part) {
+        const btns = document.querySelectorAll('.submode-btn');
+        if (btns.length >= 2) {
+          btns[0].classList.toggle('active', part === 'atlas');
+          btns[1].classList.toggle('active', part === 'flow');
+        }
+        const targetEl = document.getElementById(part === 'atlas' ? 'opp-atlas-block' : 'opp-flow-block');
+        if (targetEl) targetEl.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
+      }
+
+      function selectFlowNode(idx) {
+        document.querySelectorAll('#opportunity-flow-nodes .flow-node').forEach((node, i) => {
+          node.classList.toggle('active-flow', i === idx);
+        });
+        const detail = QUANG_TRI_DATA.flowDetails[idx];
+        if (detail) {
+          document.getElementById('flow-detail-tag').textContent = detail.tag;
+          document.getElementById('flow-detail-text').textContent = detail.text;
+        }
+      }
+
+      // PHẦN C: 7 THÁCH THỨC
+      function renderChallenges() {
+        const container = document.getElementById('challenge-list-container');
+        if (!container) return;
+
+        container.innerHTML = QUANG_TRI_DATA.challenges.map((ch, idx) => `
+          <div class="challenge-strip ${idx === 0 ? 'active-challenge' : ''}" onclick="window.QTApp.selectChallenge(${idx})">
+            <div class="challenge-strip-header">
+              <div class="challenge-title-group">
+                <span class="challenge-idx">${ch.code}</span>
+                <h4 style="font-size: 1.02rem; color: #fff;">${ch.title}</h4>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--qt-amber);">
+                Phân tích ▾
+              </span>
+            </div>
+            <div class="challenge-strip-body">
+              <div class="contrast-col risk">
+                <div style="font-family: var(--font-mono); font-size: 0.7rem; color: #fca5a5; margin-bottom: 0.3rem;">
+                  BIỂU HIỆN & SỨC ÉP THỰC TẾ
+                </div>
+                <p style="color: var(--text-secondary);">${ch.riskCol}</p>
+              </div>
+              <div class="contrast-col response">
+                <div style="font-family: var(--font-mono); font-size: 0.7rem; color: #5eead4; margin-bottom: 0.3rem;">
+                  YÊU CẦU ĐẶT RA CHO QUẢNG TRỊ
+                </div>
+                <p style="color: var(--text-secondary);">${ch.responseCol}</p>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      function selectChallenge(idx) {
+        const ch = QUANG_TRI_DATA.challenges[idx];
+        if (!ch) return;
+        document.querySelectorAll('.challenge-strip').forEach((el, i) => {
+          el.classList.toggle('active-challenge', i === idx);
+        });
+
+        document.getElementById('radar-active-title').textContent = `${idx + 1}. ${ch.title}`;
+        document.getElementById('radar-urgency-label').textContent = ch.urgencyText;
+        document.getElementById('radar-urgency-bar').style.width = ch.urgencyPct + '%';
+        document.getElementById('radar-summary-note').textContent = ch.summary;
+
+        const poly = document.getElementById('challenge-radar-poly');
+        if (poly) poly.setAttribute('points', ch.radarPoints);
+      }
+
+      // MÀN HÌNH CHUYỂN TIẾP: MỞ FILE GAME RIÊNG (`./toibigay/index.html`)
+      function openNextExperience() {
+        const configuredPath = (NEXT_EXPERIENCE_CONFIG.gameFilePath || '').trim();
+        const noticeBox = document.getElementById('transition-config-feedback');
+
+        if (!configuredPath) {
+          if (noticeBox) {
+            noticeBox.classList.add('show');
+            noticeBox.innerHTML = `
+              <strong>⚠️ Đường dẫn file game riêng chưa được cấu hình.</strong><br/>
+              Hãy điền đường dẫn tương đối vào biến <code>NEXT_EXPERIENCE_CONFIG.gameFilePath</code>.
+            `;
+          }
+          return;
+        }
+
+        // Hiển thị trạng thái rõ ràng nếu người dùng bấm từ trong môi trường Preview trực tuyến cô lập
+        if (noticeBox) {
+          noticeBox.classList.add('show');
+          noticeBox.innerHTML = `
+            <strong>Đang mở file trải nghiệm tiếp theo tại đường dẫn:</strong> <code>${configuredPath}</code><br/>
+            • Nếu bạn đang mở dự án trên máy tính (cùng cấp với thư mục <code>toibigay/</code>), trình duyệt sẽ chuyển thẳng sang <code>${configuredPath}</code>.<br/>
+            • <em>Lưu ý môi trường Preview trực tuyến:</em> Khung preview online không có quyền đọc thư mục <code>toibigay/</code> trên ổ cứng máy tính của bạn. Hãy lưu file <code>index.html</code> này đặt cạnh thư mục <code>toibigay/</code> để mở sang game thật.
+          `;
+        }
+
+        if (NEXT_EXPERIENCE_CONFIG.openInNewTab) {
+          window.open(configuredPath, '_blank', 'noopener');
+        } else {
+          window.location.href = configuredPath;
+        }
+      }
+
+      return {
+        init,
+        goToScene,
+        toggleMediaMode,
+        toggleReducedMotion,
+        selectAdvantage,
+        stepAdvantage,
+        focusOpportunityPart,
+        selectFlowNode,
+        selectChallenge,
+        openNextExperience
+      };
+    })();
+
+    document.addEventListener('DOMContentLoaded', () => {
+      window.QTApp.init();
+    });
+  </script>
+</body>
+</html>
